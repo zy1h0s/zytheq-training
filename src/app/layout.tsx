@@ -25,8 +25,12 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Zytheq LearnFlow',
-  description: 'Professional learning platform with Zytheq agency aesthetic',
+  title: {
+    default: 'Zytheq University',
+    template: '%s · Zytheq University',
+  },
+  description: 'Zytheq University — the Zytheq learning portal for trainers, candidates, and staff.',
+  applicationName: 'Zytheq University',
 };
 
 export default function RootLayout({

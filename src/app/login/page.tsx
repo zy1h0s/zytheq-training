@@ -47,11 +47,14 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-paper px-4 relative z-10">
       <div className="relative w-full max-w-md">
         <div className="text-center mb-12">
-          <h1 className="font-serif font-light text-[56px] leading-[1] tracking-[-0.04em] text-ink mb-4">
-            Learn<em className="italic text-ochre font-light font-serif-italic">Flow</em>
+          <h1 className="font-serif font-light text-[56px] leading-[1] tracking-[-0.04em] text-ink mb-2">
+            Zytheq<span className="text-ochre">_</span>
           </h1>
-          <p className="font-serif italic text-ink-soft text-[20px] max-w-[24ch] mx-auto leading-[1.4]">
-            Sign in to access your dashboard.
+          <p className="font-mono text-[11px] tracking-[0.25em] uppercase text-ink-mute mb-4">
+            University<span className="text-ochre">_</span>
+          </p>
+          <p className="font-serif italic text-ink-soft text-[18px] max-w-[28ch] mx-auto leading-[1.4]">
+            Sign in to access your learning portal.
           </p>
         </div>
 
@@ -116,7 +119,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center text-ink-faint font-mono text-[11px] uppercase tracking-[0.15em] mt-10">
-          Contact your administrator if you need access
+          A Zytheq<span className="text-ochre">_</span> learning platform
         </p>
       </div>
     </div>

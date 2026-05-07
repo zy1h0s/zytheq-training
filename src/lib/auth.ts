@@ -8,7 +8,7 @@ import { createServerClient } from './supabase';
 import bcrypt from 'bcryptjs';
 import type { SafeUser, UserRole } from '@/types';
 
-const SESSION_COOKIE_NAME = 'learnflow_session';
+const SESSION_COOKIE_NAME = 'zytheq_university_session';
 const SESSION_DURATION = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 // Hash password

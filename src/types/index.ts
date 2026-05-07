@@ -1,6 +1,6 @@
 /*
  * =============================================================================
- * LEARNFLOW - Learning Management System
+ * ZYTHEQ UNIVERSITY - Learning Management System
  * =============================================================================
  *
  * PROBLEM DEFINITION:

@@ -111,9 +111,12 @@ export function Sidebar({ role, userName = 'User', onLogout }: SidebarProps) {
   return (
     <aside className="fixed left-0 top-0 h-screen w-64 bg-paper border-r border-rule flex flex-col z-40">
       <div className="h-16 flex items-center px-6 border-b border-rule">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-serif font-light text-[26px] tracking-[-0.02em] text-ink">
-            Learn<em className="italic text-ochre">Flow</em>
+        <Link href="/" className="flex items-baseline gap-1">
+          <span className="font-serif font-light text-[22px] tracking-[-0.02em] text-ink leading-none">
+            Zytheq<span className="text-ochre">_</span>
+          </span>
+          <span className="font-serif font-light text-[15px] tracking-[0.01em] text-ink-mute leading-none">
+            University<span className="text-ochre">_</span>
           </span>
         </Link>
       </div>
