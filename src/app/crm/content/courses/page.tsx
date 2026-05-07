@@ -224,7 +224,7 @@ export default function CRMCoursesPage() {
                     key={course.id}
                     className="bg-paper-dim/50 border border-rule rounded-xl overflow-hidden hover:border-rule transition-colors"
                   >
-                    <div className="relative h-32 bg-gradient-to-br from-blue-900/50 to-slate-800 flex items-center justify-center">
+                    <div className="relative aspect-video w-full bg-paper-dim flex items-center justify-center">
                       {course.thumbnail_url ? (
                         <Image
                           src={normalizeThumbnailUrl(course.thumbnail_url) || ''}
