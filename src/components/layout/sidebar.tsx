@@ -1,54 +1,32 @@
-/*
- * Sidebar Component
- * Navigation sidebar for dashboard layouts
- */
+"use client";
 
-'use client';
-
-import { cn } from '@/lib/utils';
-import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 import {
   LayoutDashboard,
   Users,
-  FolderOpen,
   BookOpen,
-  LogOut,
-  GraduationCap,
-  UserCog,
+  FolderOpen,
   ClipboardList,
   ChevronDown,
+  LogOut,
+  GraduationCap
 } from 'lucide-react';
-import { useState } from 'react';
-import type { UserRole } from '@/types';
-
-interface NavItem {
-  label: string;
-  href: string;
-  icon: typeof LayoutDashboard;
-  children?: { label: string; href: string }[];
-}
 
 interface SidebarProps {
-  role: UserRole;
-  userName: string;
-  onLogout: () => void;
+  role: 'trainer' | 'crm' | 'candidate' | 'other';
+  userName?: string;
+  onLogout?: () => void;
 }
 
-export function Sidebar({ role, userName, onLogout }: SidebarProps) {
+export function Sidebar({ role, userName = 'User', onLogout }: SidebarProps) {
   const pathname = usePathname();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
-  // Navigation items by role
-  const getNavItems = (): NavItem[] => {
+  const getNavItems = () => {
     switch (role) {
-      case 'admin':
-        return [
-          { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
-          { label: 'Trainers', href: '/admin/trainers', icon: GraduationCap },
-          { label: 'CRM Users', href: '/admin/crm', icon: UserCog },
-          { label: 'Reassign', href: '/admin/reassign', icon: ClipboardList },
-        ];
       case 'trainer':
         return [
           { label: 'Dashboard', href: '/trainer', icon: LayoutDashboard },
@@ -107,36 +85,37 @@ export function Sidebar({ role, userName, onLogout }: SidebarProps) {
   };
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-slate-900 border-r border-slate-800 flex flex-col z-40">
-      {/* Logo */}
-      <div className="h-16 flex items-center px-6 border-b border-slate-800">
+    <aside className="fixed left-0 top-0 h-screen w-64 bg-paper border-r border-rule flex flex-col z-40">
+      <div className="h-16 flex items-center px-6 border-b border-rule">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <GraduationCap className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-xl font-bold text-white">LearnFlow</span>
+          <span className="font-serif font-light text-[26px] tracking-[-0.02em] text-ink">
+            Learn<em className="italic text-ochre">Flow</em>
+          </span>
         </Link>
       </div>
 
-      {/* Navigation */}
-      <nav className="flex-1 px-3 py-4 overflow-y-auto">
-        <ul className="space-y-1">
+      <nav className="flex-1 px-4 py-8 overflow-y-auto">
+        <div className="mb-6">
+          <h4 className="font-mono text-[10px] tracking-[0.2em] uppercase text-ochre px-2">
+            {role} Portal
+          </h4>
+        </div>
+        <ul className="space-y-2">
           {navItems.map((item) => (
             <li key={item.label}>
               {item.children ? (
-                // Expandable menu item
                 <div>
                   <button
                     onClick={() => toggleExpand(item.label)}
                     className={cn(
-                      'w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
+                      'w-full group relative flex items-center justify-between px-3 py-2 text-[14.5px] font-medium transition-all duration-300',
                       isActive(item.href)
-                        ? 'bg-blue-600/20 text-blue-400'
-                        : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+                        ? 'text-ink bg-paper-warm'
+                        : 'text-ink-mute hover:bg-paper-warm hover:text-ink'
                     )}
                   >
                     <div className="flex items-center gap-3">
-                      <item.icon className="w-5 h-5" />
+                      <item.icon className={cn("w-4 h-4 transition-colors", isActive(item.href) ? "text-ochre" : "text-ink-mute group-hover:text-ink")} />
                       {item.label}
                     </div>
                     <ChevronDown
@@ -145,18 +124,19 @@ export function Sidebar({ role, userName, onLogout }: SidebarProps) {
                         expandedItems.includes(item.label) && 'rotate-180'
                       )}
                     />
+                    {isActive(item.href) && <span className="absolute left-0 top-0 bottom-0 w-[2px] bg-ochre" />}
                   </button>
                   {expandedItems.includes(item.label) && (
-                    <ul className="mt-1 ml-8 space-y-1">
+                    <ul className="mt-1 ml-9 space-y-1">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
                             href={child.href}
                             className={cn(
-                              'block px-3 py-2 rounded-lg text-sm transition-colors',
+                              'block px-3 py-1.5 text-[14px] transition-colors',
                               pathname === child.href
-                                ? 'text-blue-400'
-                                : 'text-slate-500 hover:text-white'
+                                ? 'text-ochre font-medium'
+                                : 'text-ink-mute hover:text-ink'
                             )}
                           >
                             {child.label}
@@ -167,18 +147,18 @@ export function Sidebar({ role, userName, onLogout }: SidebarProps) {
                   )}
                 </div>
               ) : (
-                // Regular menu item
                 <Link
                   href={item.href}
                   className={cn(
-                    'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
+                    'group relative flex items-center gap-3 px-3 py-2 text-[14.5px] font-medium transition-all duration-300',
                     isActive(item.href)
-                      ? 'bg-blue-600/20 text-blue-400'
-                      : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+                      ? 'text-ink bg-paper-warm'
+                      : 'text-ink-mute hover:bg-paper-warm hover:text-ink'
                   )}
                 >
-                  <item.icon className="w-5 h-5" />
+                  <item.icon className={cn("w-4 h-4 transition-colors", isActive(item.href) ? "text-ochre" : "text-ink-mute group-hover:text-ink")} />
                   {item.label}
+                  {isActive(item.href) && <span className="absolute left-0 top-0 bottom-0 w-[2px] bg-ochre" />}
                 </Link>
               )}
             </li>
@@ -186,22 +166,21 @@ export function Sidebar({ role, userName, onLogout }: SidebarProps) {
         </ul>
       </nav>
 
-      {/* User section */}
-      <div className="p-4 border-t border-slate-800">
-        <div className="flex items-center gap-3 px-3 py-2 mb-2">
-          <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-sm font-medium text-white">
+      <div className="p-6 border-t border-rule">
+        <div className="flex items-center gap-3 mb-4 px-2">
+          <div className="w-8 h-8 bg-ink rounded flex items-center justify-center text-sm font-medium text-paper">
             {userName.charAt(0).toUpperCase()}
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-white truncate">{userName}</p>
-            <p className="text-xs text-slate-500 capitalize">{role}</p>
+            <p className="text-[14px] font-medium text-ink truncate">{userName}</p>
+            <p className="font-mono text-[10px] text-ink-mute uppercase tracking-[0.1em]">{role}</p>
           </div>
         </div>
         <button
           onClick={onLogout}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
+          className="w-full flex items-center gap-3 px-3 py-2 text-[14.5px] font-medium text-ink-mute hover:bg-paper-warm hover:text-crimson transition-colors"
         >
-          <LogOut className="w-5 h-5" />
+          <LogOut className="w-4 h-4" />
           Logout
         </button>
       </div>

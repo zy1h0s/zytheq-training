@@ -1,39 +1,25 @@
-/*
- * Dashboard Layout Component
- * Wrapper for authenticated dashboard pages
- */
+"use client";
 
-'use client';
-
-import { ReactNode } from 'react';
-import { useRouter } from 'next/navigation';
-import { Sidebar } from './sidebar';
-import type { UserRole } from '@/types';
+import { Sidebar } from "./sidebar";
+import { Header } from "./header";
 
 interface DashboardLayoutProps {
-  children: ReactNode;
-  role: UserRole;
-  userName: string;
+  children: React.ReactNode;
+  role?: "trainer" | "candidate";
 }
 
-export function DashboardLayout({ children, role, userName }: DashboardLayoutProps) {
-  const router = useRouter();
-
-  const handleLogout = async () => {
-    try {
-      await fetch('/api/auth/logout', { method: 'POST' });
-      router.push('/login');
-    } catch (error) {
-      console.error('Logout failed:', error);
-    }
-  };
-
+export function DashboardLayout({ children, role = "trainer" }: DashboardLayoutProps) {
   return (
-    <div className="min-h-screen bg-transparent">
-      <Sidebar role={role} userName={userName} onLogout={handleLogout} />
-      <main className="ml-64 min-h-screen bg-slate-950/80 backdrop-blur-sm animate-fadeIn">
-        {children}
-      </main>
+    <div className="flex h-screen overflow-hidden bg-paper">
+      <Sidebar role={role} />
+      <div className="flex flex-1 flex-col overflow-hidden relative z-10">
+        <Header />
+        <main className="flex-1 overflow-y-auto bg-transparent p-8 lg:p-12">
+          <div className="mx-auto max-w-[1280px]">
+            {children}
+          </div>
+        </main>
+      </div>
     </div>
   );
 }

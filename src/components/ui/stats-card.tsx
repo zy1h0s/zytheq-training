@@ -1,19 +1,15 @@
-/*
- * Stats Card Component
- * Dashboard metric display
- */
-
-import { cn } from '@/lib/utils';
-import { LucideIcon } from 'lucide-react';
+import { cn } from "@/lib/utils";
+import { Card, CardContent } from "@/components/ui/card";
+import { LucideIcon } from "lucide-react";
 
 interface StatsCardProps {
   title: string;
-  value: string | number;
+  value: string;
   description?: string;
-  icon?: LucideIcon;
+  icon: LucideIcon;
   trend?: {
     value: number;
-    isPositive: boolean;
+    label: string;
   };
   className?: string;
 }
@@ -27,39 +23,44 @@ export function StatsCard({
   className,
 }: StatsCardProps) {
   return (
-    <div
-      className={cn(
-        'bg-slate-800/50 border border-slate-700 rounded-xl p-6',
-        className
-      )}
-    >
-      <div className="flex items-start justify-between">
+    <Card className={cn("overflow-hidden group", className)}>
+      <CardContent className="p-6">
+        <div className="flex items-start justify-between mb-6">
+          <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-ochre">
+            {title}
+          </div>
+          <div className="p-3 bg-paper-dim border border-rule group-hover:bg-paper-warm group-hover:border-ochre transition-colors">
+            <Icon className="w-5 h-5 text-ink" />
+          </div>
+        </div>
+
         <div>
-          <p className="text-sm font-medium text-slate-400">{title}</p>
-          <p className="text-3xl font-bold text-white mt-2">{value}</p>
-          {description && (
-            <p className="text-sm text-slate-500 mt-1">{description}</p>
-          )}
-          {trend && (
-            <div className="flex items-center mt-2">
+          <div className="font-serif text-[42px] leading-[1] font-light text-ink tracking-[-0.03em] mb-3">
+            {value}
+          </div>
+          
+          <div className="flex items-center gap-2">
+            {trend && (
               <span
                 className={cn(
-                  'text-sm font-medium',
-                  trend.isPositive ? 'text-green-400' : 'text-red-400'
+                  "font-mono text-[10px] uppercase tracking-[0.1em] px-2 py-0.5 border",
+                  trend.value > 0
+                    ? "text-moss bg-moss/5 border-moss/20"
+                    : "text-crimson bg-crimson/5 border-crimson/20"
                 )}
               >
-                {trend.isPositive ? '+' : '-'}{Math.abs(trend.value)}%
+                {trend.value > 0 ? "+" : ""}
+                {trend.value}%
               </span>
-              <span className="text-xs text-slate-500 ml-1">vs last week</span>
-            </div>
-          )}
-        </div>
-        {Icon && (
-          <div className="p-3 bg-blue-900/30 rounded-lg">
-            <Icon className="w-6 h-6 text-blue-400" />
+            )}
+            {(description || trend) && (
+              <span className="text-[13px] text-ink-mute">
+                {description || trend?.label}
+              </span>
+            )}
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

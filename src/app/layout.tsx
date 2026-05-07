@@ -1,23 +1,32 @@
-/*
- * Root Layout
- * Global layout wrapper for the application
- */
-
 import type { Metadata } from 'next';
-import { Space_Grotesk } from 'next/font/google';
+import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
+import Cursor from '@/components/layout/cursor';
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-space',
+  variable: '--font-fraunces',
+  display: 'swap',
+  axes: ['SOFT', 'opsz'],
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-ibm-plex-sans',
+  display: 'swap',
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-ibm-plex-mono',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'LearnFlow | Learning Management System',
-  description: 'Professional learning platform for trainers and candidates',
-  icons: {
-    icon: '/favicon.ico',
-  },
+  title: 'Zytheq LearnFlow',
+  description: 'Professional learning platform with Zytheq agency aesthetic',
 };
 
 export default function RootLayout({
@@ -26,8 +35,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${spaceGrotesk.variable} font-sans antialiased text-white`}>
+    <html lang="en" className="light" suppressHydrationWarning>
+      <body 
+        className={`${fraunces.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable} font-sans antialiased text-ink selection:bg-ink selection:text-paper`}
+        suppressHydrationWarning
+      >
+        <Cursor />
         {children}
       </body>
     </html>

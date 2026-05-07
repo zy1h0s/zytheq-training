@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#F4EFE6">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src https://api.web3forms.com; frame-src 'none'; object-src 'none'; form-action https://api.web3forms.com;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+<title>Zytheq · We run your job search while you mentor the next generation</title>
+<meta name="description" content="Zytheq runs the resume, applications, LinkedIn, and recruiter outreach for senior US professionals. In return you mentor an Indian student a few hours a week. Recruiters get pre-vetted, interview-ready talent.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zytheq · We run your job search. You change a student's life.">
+<meta property="og:description" content="A career services firm built on a give-back model. We handle the search end-to-end. You mentor a student. Recruiters get prepared candidates.">
+<meta property="og:site_name" content="Zytheq">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zytheq · Run by us. Earned by you.">
+<meta name="twitter:description" content="A career services firm built on a give-back model.">
+
+<meta name="keywords" content="job search service US, executive job search, senior engineer job search, career services US, resume rewriting service, LinkedIn optimization, recruiter outreach, mentor an Indian student, give back career, US professional mentor, hire pre-vetted candidates">
+<meta name="author" content="Zytheq">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.zytheq.com/">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zytheq",
+  "url": "https://www.zytheq.com",
+  "description": "A career services firm that runs the job search for senior US professionals in exchange for student mentorship, and supplies pre-vetted, interview-ready talent to recruiters.",
+  "address": [
+    {"@type": "PostalAddress", "addressLocality": "Wilmington", "addressRegion": "DE", "addressCountry": "US"},
+    {"@type": "PostalAddress", "addressLocality": "Ahmedabad", "addressRegion": "GJ", "addressCountry": "IN"}
+  ],
+  "sameAs": ["https://www.linkedin.com/company/zytheq", "https://twitter.com/zytheq"],
+  "contactPoint": {"@type": "ContactPoint", "contactType": "Customer Service", "email": "contact@zytheq.com"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Career placement and preparation services",
+  "provider": {"@type": "Organization", "name": "Zytheq"},
+  "areaServed": "United States",
+  "audience": [
+    {"@type": "Audience", "audienceType": "Senior US professionals and Green Card holders with five plus years experience"},
+    {"@type": "Audience", "audienceType": "Hiring teams and technical recruiters"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Who qualifies for the give-back program?", "acceptedAnswer": {"@type": "Answer", "text": "US citizens and Green Card holders with five or more years of professional experience qualify for our mentor-led give-back program. Other situations are handled on different terms which we discuss on a discovery call."}},
+    {"@type": "Question", "name": "What does Zytheq actually do for me?", "acceptedAnswer": {"@type": "Answer", "text": "We rebuild your resume into three variants, overhaul your LinkedIn, run targeted applications, write recruiter outreach for hiring managers at your target companies, and run mock interviews and company-specific briefs."}},
+    {"@type": "Question", "name": "How much time does the mentorship take?", "acceptedAnswer": {"@type": "Answer", "text": "One to three hours per week, in your evening hours, over Zoom. We provide the structure and the curriculum. You teach what you already know."}},
+    {"@type": "Question", "name": "How does Zytheq help recruiters?", "acceptedAnswer": {"@type": "Answer", "text": "We supply pre-vetted, interview-ready candidates with engineered resumes, sharp LinkedIn profiles, and prep history. No sourcing fee on initial introductions. Volume scales to your req load."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #F4EFE6;
+  --paper-warm: #EDE6D5;
+  --paper-dim: #E8E1D2;
+  --ink: #14110F;
+  --ink-soft: #2A2723;
+  --ink-mute: #6B645A;
+  --ink-faint: #9A9387;
+  --rule: #D9D2C4;
+  --rule-soft: #E8E1D2;
+  --ochre: #B7410E;
+  --ochre-soft: #DC8A4F;
+  --ochre-faint: rgba(183, 65, 14, 0.10);
+  --moss: #4A5D3A;
+  --crimson: #8B2C24;
+  --gold: #A6873B;
+  --shadow: rgba(20, 17, 15, 0.08);
+  --shadow-strong: rgba(20, 17, 15, 0.18);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "IBM Plex Sans", -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", monospace;
+  --container: 1280px;
+  --gutter: clamp(20px, 4vw, 64px);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+*::selection { background: var(--ink); color: var(--paper); }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; font-weight: 400; font-feature-settings: "kern", "liga", "calt", "ss01"; -webkit-font-smoothing: antialiased; overflow-x: hidden; cursor: none; }
+@media (hover: none) { body { cursor: auto; } .cursor, .cursor--ring { display: none; } }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: 0.5; background-image: radial-gradient(circle at 15% 20%, var(--ochre-faint) 0%, transparent 40%), radial-gradient(circle at 85% 80%, var(--ochre-faint) 0%, transparent 45%); mix-blend-mode: multiply; z-index: 0; }
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+
+.cursor { position: fixed; top: 0; left: 0; width: 8px; height: 8px; background: var(--paper); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width 0.25s var(--ease-out), height 0.25s var(--ease-out), opacity 0.2s; mix-blend-mode: difference; }
+.cursor--ring { position: fixed; top: 0; left: 0; width: 36px; height: 36px; border: 1px solid var(--ink); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width 0.35s var(--ease-out), height 0.35s var(--ease-out), border-color 0.25s, opacity 0.2s; }
+.cursor.is-hover { width: 32px; height: 32px; }
+.cursor--ring.is-hover { width: 60px; height: 60px; border-color: var(--ochre); }
+.cursor.is-text { width: 2px; height: 22px; border-radius: 0; }
+.cursor--ring.is-text { opacity: 0; }
+.cursor.is-hidden, .cursor--ring.is-hidden { opacity: 0; }
+
+
+.loader { position: fixed; inset: 0; background: var(--ink); z-index: 10000; display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--paper); transition: opacity 0.6s var(--ease-out), visibility 0.6s; }
+.loader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader__mark {
+  position: relative;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-variation-settings: "opsz" 144, "SOFT" 60;
+  font-size: clamp(64px, 11vw, 150px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  color: var(--paper);
+  margin-bottom: 34px;
+  overflow: visible;
+}
+
+.loader__mark em {
+  font-style: italic;
+  color: var(--ochre-soft);
+}
+
+.loader__mark span {
+  display: inline-block;
+  transform: translateY(115%) rotate(5deg);
+  animation: loaderWordRise 1s var(--ease-out) forwards;
+}
+
+.loader__mark span:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+
+
+.loader__bar {
+  width: min(320px, 62vw);
+  height: 1px;
+  background: rgba(244, 239, 230, 0.16);
+  position: relative;
+  overflow: hidden;
+}
+
+.loader__bar::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  background: var(--ochre-soft);
+  border-radius: 50%;
+  transform: translateX(-50%) scale(0);
+  animation: loaderSpark 1.35s var(--ease-out) forwards;
+}
+
+.loader__bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--ochre-soft),
+    var(--paper),
+    var(--ochre-soft),
+    transparent
+  );
+  transform: translateX(-110%);
+  animation: loaderProgress 1.35s var(--ease-out) forwards;
+}
+
+.loader__label {
+  margin-top: 22px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 230, 0.52);
+  animation: loaderLabelIn 0.7s var(--ease-out) 0.55s both;
+}
+
+@keyframes loaderWordRise {
+  to {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+
+
+@keyframes loaderSpark {
+  0% {
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+  }
+  35% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes loaderProgress {
+  to {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes loaderLabelIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px var(--gutter); background: rgba(244, 239, 230, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid transparent; transition: border-color 0.3s, padding 0.3s; }
+.nav.is-scrolled { border-color: var(--rule); padding: 14px var(--gutter); }
+.nav__brand--text {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-variation-settings: "opsz" 144, "SOFT" 60;
+  font-size: clamp(32px, 3vw, 44px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.nav__brand--text em {
+  font-style: italic;
+  color: var(--ochre);
+}
+.nav__menu { display: flex; gap: 32px; align-items: center; font-size: 14px; font-weight: 400; }
+.nav__link { position: relative; color: var(--ink-soft); padding: 4px 0; transition: color 0.2s; }
+.nav__link::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--ochre); transition: width 0.35s var(--ease-out); }
+.nav__link:hover, .nav__link.is-active { color: var(--ink); }
+.nav__link:hover::after, .nav__link.is-active::after { width: 100%; }
+.nav__link.is-active::after { background: var(--ink); }
+.nav__cta { font-family: var(--sans); font-size: 13px; font-weight: 500; padding: 11px 22px; background: var(--ink); color: var(--paper); letter-spacing: 0.02em; transition: background 0.25s, transform 0.25s var(--ease-out); }
+.nav__cta:hover { background: var(--ochre); transform: translateY(-1px); }
+.nav__hamburger { display: none; width: 38px; height: 38px; background: transparent; border: 1px solid var(--rule); position: relative; cursor: none; }
+.nav__hamburger span { position: absolute; left: 9px; right: 9px; height: 1.5px; background: var(--ink); transition: all 0.3s var(--ease-out); }
+.nav__hamburger span:nth-child(1) { top: 12px; }
+.nav__hamburger span:nth-child(2) { top: 18px; }
+.nav__hamburger span:nth-child(3) { top: 24px; }
+.nav__hamburger.is-open span:nth-child(1) { top: 18px; transform: rotate(45deg); }
+.nav__hamburger.is-open span:nth-child(2) { opacity: 0; }
+.nav__hamburger.is-open span:nth-child(3) { top: 18px; transform: rotate(-45deg); }
+
+
+.view { display: none; padding-top: 80px; position: relative; z-index: 1; min-height: 100vh; }
+.view.is-active { display: block; animation: viewIn 0.6s var(--ease-out); }
+@keyframes viewIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+
+
+.hero { padding: clamp(60px, 12vw, 140px) 0 clamp(40px, 6vw, 80px); position: relative; overflow: hidden; }
+.hero__eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ochre); margin-bottom: 30px; padding: 6px 14px; background: var(--ochre-faint); border: 1px solid var(--ochre); border-radius: 100px; }
+.hero__eyebrow-dot { width: 6px; height: 6px; background: var(--ochre); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
+.hero__title { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 50; font-size: clamp(46px, 8vw, 124px); line-height: 0.95; letter-spacing: -0.04em; color: var(--ink); max-width: 18ch; margin-bottom: clamp(28px, 4vw, 50px); }
+.hero__title em { font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 100; color: var(--ochre); }
+.hero__title .reveal-word { display: inline-block; overflow: hidden; vertical-align: top; }
+.hero__title .reveal-word > span { display: inline-block; transform: translateY(110%); animation: wordIn 1.0s var(--ease-out) forwards; }
+@keyframes wordIn { to { transform: translateY(0); } }
+.hero__bottom { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(30px, 5vw, 80px); align-items: end; }
+.hero__sub { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(18px, 2.2vw, 26px); line-height: 1.4; color: var(--ink-soft); max-width: 34ch; opacity: 0; animation: fadeUp 0.8s var(--ease-out) 0.6s forwards; }
+.hero__cta-block { display: flex; flex-direction: column; gap: 16px; opacity: 0; animation: fadeUp 0.8s var(--ease-out) 0.8s forwards; }
+.hero__cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.btn-primary { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; padding: 16px 28px; background: var(--ink); color: var(--paper); letter-spacing: 0.02em; transition: background 0.3s, transform 0.3s var(--ease-out); }
+.btn-primary:hover { background: var(--ochre); transform: translateY(-2px); }
+.btn-primary-arrow { display: inline-block; transition: transform 0.3s var(--ease-out); }
+.btn-primary:hover .btn-primary-arrow { transform: translateX(6px); }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--ink); padding: 16px 4px; border-bottom: 1px solid var(--ink); transition: color 0.2s, border-color 0.2s; }
+.btn-secondary:hover { color: var(--ochre); border-color: var(--ochre); }
+.btn-secondary-arrow { display: inline-block; transition: transform 0.3s var(--ease-out); }
+.btn-secondary:hover .btn-secondary-arrow { transform: translateX(4px); }
+.hero__cta-note { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+
+.trust-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: clamp(50px, 7vw, 90px); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.trust-item { padding: 24px 20px; border-right: 1px solid var(--rule); }
+.trust-item:last-child { border-right: none; }
+.trust-item__num { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1; letter-spacing: -0.02em; color: var(--ochre); margin-bottom: 8px; }
+.trust-item__num em { font-style: normal; font-size: 0.55em; vertical-align: super; color: var(--ink); }
+.trust-item__label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); line-height: 1.5; }
+
+
+.ticker { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); background: var(--paper); overflow: hidden; position: relative; padding: 18px 0; }
+.ticker__label { position: absolute; top: 50%; left: var(--gutter); transform: translateY(-50%); background: var(--paper); padding-right: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre); z-index: 2; }
+.ticker__label::after { content: "→"; margin-left: 10px; color: var(--ink-mute); }
+.ticker__track { display: flex; gap: 60px; white-space: nowrap; animation: tickerScroll 60s linear infinite; padding-left: 200px; font-family: var(--mono); font-size: 13px; color: var(--ink-soft); }
+.ticker__item { display: inline-flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.ticker__item strong { color: var(--ink); font-weight: 600; }
+.ticker__item span { color: var(--ink-faint); }
+.ticker__dot { width: 6px; height: 6px; background: var(--ochre); border-radius: 50%; flex-shrink: 0; }
+@keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+
+.section { padding: clamp(80px, 11vw, 150px) 0; position: relative; }
+.section--tight { padding: clamp(50px, 7vw, 90px) 0; }
+.section__label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre); margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+.section__label::before { content: ""; display: inline-block; width: 32px; height: 1px; background: var(--ochre); }
+.section__title { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 50; font-size: clamp(38px, 5.5vw, 76px); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 30px; max-width: 18ch; }
+.section__title em { font-style: italic; color: var(--ochre); font-variation-settings: "opsz" 144, "SOFT" 100; }
+.section__intro { font-family: var(--serif); font-weight: 300; font-size: clamp(18px, 1.9vw, 23px); line-height: 1.5; color: var(--ink-soft); max-width: 60ch; margin-bottom: 50px; }
+
+
+.versus { display: grid; grid-template-columns: 1fr 80px 1fr; gap: 0; margin-top: 60px; border: 1px solid var(--rule); }
+.versus__col { padding: clamp(28px, 3.5vw, 48px); display: flex; flex-direction: column; gap: 18px; background: var(--paper); }
+.versus__col--right { background: var(--paper-warm); }
+.versus__divider { display: flex; align-items: center; justify-content: center; border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 28px; background: var(--ink); color: var(--paper); }
+.versus__head { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); padding-bottom: 16px; border-bottom: 1px solid var(--rule); margin-bottom: 8px; }
+.versus__col--right .versus__head { color: var(--ochre); }
+.versus__line { font-family: var(--serif); font-weight: 300; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.5; color: var(--ink-soft); padding: 14px 0; border-bottom: 1px dashed var(--rule); }
+.versus__line:last-child { border-bottom: none; }
+.versus__col--right .versus__line { color: var(--ink); }
+
+
+.pillars { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 4vw, 60px); margin-top: 50px; }
+.pillar { border-top: 1px solid var(--ink); padding-top: 28px; }
+.pillar__num { font-family: var(--mono); font-size: 11px; color: var(--ochre); letter-spacing: 0.2em; margin-bottom: 18px; }
+.pillar__title { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 14px; }
+.pillar__title em { font-style: italic; color: var(--ochre); }
+.pillar__body { font-size: 16px; line-height: 1.65; color: var(--ink-soft); max-width: 50ch; }
+.pillar__body strong { color: var(--ink); font-weight: 500; }
+
+
+.giveback { background: var(--ink); color: var(--paper); padding: clamp(70px, 9vw, 120px) 0; position: relative; z-index: 1; }
+.giveback__inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
+.giveback__label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre-soft); margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+.giveback__label::before { content: ""; display: inline-block; width: 32px; height: 1px; background: var(--ochre-soft); }
+.giveback__title { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 50; font-size: clamp(38px, 5.5vw, 76px); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 24px; }
+.giveback__title em { font-style: italic; color: var(--ochre-soft); font-variation-settings: "opsz" 144, "SOFT" 100; }
+.giveback__lede { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(19px, 2.2vw, 25px); line-height: 1.45; color: var(--paper-warm); max-width: 30ch; margin-bottom: 30px; opacity: 0.9; }
+.giveback__body { font-size: 16px; line-height: 1.7; color: var(--paper-warm); max-width: 50ch; opacity: 0.85; }
+.giveback__body p { margin-bottom: 14px; }
+.giveback__body strong { color: var(--paper); font-weight: 500; }
+.giveback__stats { display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(244, 239, 230, 0.18); }
+.giveback__stat { padding: 24px 26px; border-bottom: 1px solid rgba(244, 239, 230, 0.18); display: flex; flex-direction: column; gap: 8px; }
+.giveback__stat:last-child { border-bottom: none; }
+.giveback__stat-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre-soft); }
+.giveback__stat-value { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1; letter-spacing: -0.02em; color: var(--paper); }
+.giveback__stat-sub { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.05em; }
+.giveback__cta-row { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.btn-onlight { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; padding: 16px 28px; background: var(--ochre); color: var(--paper); letter-spacing: 0.02em; transition: background 0.3s, transform 0.3s var(--ease-out); }
+.btn-onlight:hover { background: var(--paper); color: var(--ink); transform: translateY(-2px); }
+.btn-onlight-secondary { color: var(--paper); padding: 16px 4px; border-bottom: 1px solid var(--paper); display: inline-flex; gap: 8px; font-size: 14px; font-weight: 500; transition: color 0.2s, border-color 0.2s; }
+.btn-onlight-secondary:hover { color: var(--ochre-soft); border-color: var(--ochre-soft); }
+
+
+.process-grid { margin-top: 50px; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--rule); }
+.process-cell { padding: clamp(28px, 3vw, 40px); border-right: 1px solid var(--rule); background: var(--paper); transition: background 0.4s var(--ease-out); position: relative; min-height: 280px; display: flex; flex-direction: column; }
+.process-cell:last-child { border-right: none; }
+.process-cell:hover { background: var(--paper-warm); }
+.process-cell__step { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre); margin-bottom: 28px; }
+.process-cell__title { font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.01em; }
+.process-cell__title em { font-style: italic; color: var(--ochre); }
+.process-cell__body { font-size: 14px; line-height: 1.6; color: var(--ink-mute); margin-bottom: 24px; flex: 1; }
+.process-cell__metric { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--ink-faint); text-transform: uppercase; border-top: 1px solid var(--rule); padding-top: 14px; }
+.process-cell__metric strong { color: var(--ink); font-weight: 500; }
+
+
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 50px; border: 1px solid var(--rule); }
+.service { padding: clamp(28px, 3vw, 40px); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--paper); transition: background 0.3s; }
+.service:nth-child(3n) { border-right: none; }
+.service:nth-last-child(-n+3) { border-bottom: none; }
+.service:hover { background: var(--paper-warm); }
+.service__num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--ochre); margin-bottom: 18px; }
+.service__title { font-family: var(--serif); font-weight: 500; font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; }
+.service__title em { font-style: italic; color: var(--ochre); }
+.service__body { font-size: 14.5px; line-height: 1.6; color: var(--ink-mute); }
+
+
+.recruiters-banner { background: var(--paper-warm); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: clamp(60px, 8vw, 100px) 0; }
+.recruiters-banner__inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+.recruiters-banner__label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre); margin-bottom: 22px; }
+.recruiters-banner__title { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 50; font-size: clamp(34px, 4.5vw, 60px); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 22px; }
+.recruiters-banner__title em { font-style: italic; color: var(--ochre); }
+.recruiters-banner__body { font-size: 16px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 30px; max-width: 48ch; }
+.recruiters-banner__body strong { color: var(--ink); font-weight: 500; }
+.recruiters-banner__list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.recruiters-banner__list li { padding-left: 28px; position: relative; font-size: 15.5px; line-height: 1.55; color: var(--ink-soft); }
+.recruiters-banner__list li::before { content: ""; position: absolute; left: 0; top: 11px; width: 16px; height: 1px; background: var(--ochre); }
+.recruiters-banner__list li strong { color: var(--ink); font-weight: 500; }
+
+
+.testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+.testimonial { background: var(--paper); border: 1px solid var(--rule); padding: 28px; display: flex; flex-direction: column; gap: 18px; transition: transform 0.4s var(--ease-out), border-color 0.3s; }
+.testimonial:hover { transform: translateY(-3px); border-color: var(--ink); }
+.testimonial__mark { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 56px; line-height: 0.6; color: var(--ochre); }
+.testimonial__quote { font-family: var(--serif); font-weight: 300; font-size: 17px; line-height: 1.5; color: var(--ink); }
+.testimonial__attr { display: flex; align-items: center; gap: 14px; padding-top: 18px; border-top: 1px solid var(--rule); margin-top: auto; }
+.testimonial__avatar { width: 38px; height: 38px; background: var(--ink); color: var(--paper); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; font-weight: 600; }
+.testimonial__name { font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; color: var(--ink); font-weight: 500; }
+.testimonial__role { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--ink-mute); margin-top: 2px; text-transform: uppercase; }
+.testimonial__tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; padding: 3px 8px; background: var(--ochre-faint); color: var(--ochre); border: 1px solid var(--ochre); margin-left: auto; text-transform: uppercase; font-weight: 600; }
+
+
+.faq { margin-top: 50px; border-top: 1px solid var(--rule); }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-item__q { width: 100%; padding: 26px 0; background: transparent; border: none; text-align: left; font-family: var(--serif); font-weight: 400; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.3; letter-spacing: -0.01em; color: var(--ink); cursor: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; transition: color 0.2s; }
+.faq-item__q:hover { color: var(--ochre); }
+.faq-item__icon { flex-shrink: 0; width: 24px; height: 24px; position: relative; margin-top: 6px; }
+.faq-item__icon::before, .faq-item__icon::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--ink); transition: transform 0.4s var(--ease-out), background 0.2s; }
+.faq-item__icon::before { width: 18px; height: 1.5px; transform: translate(-50%, -50%); }
+.faq-item__icon::after { width: 1.5px; height: 18px; transform: translate(-50%, -50%); }
+.faq-item.is-open .faq-item__icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+.faq-item.is-open .faq-item__q { color: var(--ochre); }
+.faq-item__a { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease-out); }
+.faq-item__a-inner { padding: 0 0 26px 0; font-size: 16px; line-height: 1.7; color: var(--ink-soft); max-width: 70ch; }
+.faq-item__a-inner p { margin-bottom: 14px; }
+.faq-item__a-inner p:last-child { margin-bottom: 0; }
+.faq-item__a-inner strong { color: var(--ink); font-weight: 500; }
+.faq-item.is-open .faq-item__a { max-height: 800px; }
+
+
+.final-cta { padding: clamp(70px, 9vw, 130px) 0; background: var(--ink); color: var(--paper); position: relative; z-index: 1; }
+.final-cta__inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: center; }
+.final-cta__title { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 50; font-size: clamp(38px, 5.5vw, 76px); line-height: 1; letter-spacing: -0.03em; max-width: 18ch; }
+.final-cta__title em { font-style: italic; color: var(--ochre-soft); font-variation-settings: "opsz" 144, "SOFT" 100; }
+.final-cta__sub { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 18px; line-height: 1.5; color: var(--paper-warm); margin-top: 24px; max-width: 32ch; opacity: 0.85; }
+.final-cta__action { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.final-cta__btn { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; padding: 18px 32px; background: var(--ochre); color: var(--paper); transition: background 0.3s, transform 0.3s var(--ease-out); }
+.final-cta__btn:hover { background: var(--paper); color: var(--ink); transform: translateY(-2px); }
+.final-cta__btn-secondary { color: var(--paper); padding: 6px 0 0 0; border-bottom: 1px solid var(--paper); display: inline-flex; gap: 8px; font-size: 13px; transition: color 0.2s, border-color 0.2s; }
+.final-cta__btn-secondary:hover { color: var(--ochre-soft); border-color: var(--ochre-soft); }
+.final-cta__note { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--ink-faint); }
+
+
+.bigquote { padding: clamp(70px, 9vw, 120px) 0; border-top: 1px solid var(--rule); }
+.bigquote__text { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 50; font-style: italic; font-size: clamp(26px, 4vw, 54px); line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); max-width: 26ch; }
+.bigquote__text em { font-style: italic; color: var(--ochre); }
+.bigquote__attr { margin-top: 30px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); }
+
+
+.page-header { padding: clamp(70px, 10vw, 130px) 0 clamp(40px, 6vw, 80px); border-bottom: 1px solid var(--rule); }
+.page-header__breadcrumb { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 30px; display: flex; gap: 14px; }
+.page-header__breadcrumb a { color: var(--ochre); }
+.page-header__title { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 50; font-size: clamp(46px, 7vw, 100px); line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 30px; max-width: 18ch; }
+.page-header__title em { font-style: italic; color: var(--ochre); font-variation-settings: "opsz" 144, "SOFT" 100; }
+.page-header__lede { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(19px, 2.2vw, 25px); line-height: 1.4; color: var(--ink-soft); max-width: 56ch; }
+
+
+.process-timeline { margin-top: 60px; display: flex; flex-direction: column; }
+.timeline-row { display: grid; grid-template-columns: 100px 1fr 1.4fr; gap: clamp(20px, 3vw, 50px); padding: clamp(36px, 4vw, 60px) 0; border-top: 1px solid var(--rule); align-items: start; }
+.timeline-row:last-child { border-bottom: 1px solid var(--rule); }
+.timeline-step { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ochre); font-weight: 600; padding-top: 8px; }
+.timeline-title { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.6vw, 36px); line-height: 1.1; letter-spacing: -0.02em; }
+.timeline-title em { font-style: italic; color: var(--ochre); }
+.timeline-body { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+.timeline-body p { margin-bottom: 10px; }
+.timeline-body p:last-child { margin-bottom: 0; }
+.timeline-body strong { color: var(--ink); font-weight: 500; }
+
+
+.eligibility { background: var(--paper-warm); border: 1px solid var(--ochre); margin-top: 50px; padding: clamp(28px, 3.5vw, 44px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 4vw, 60px); align-items: center; }
+.eligibility__head { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre); margin-bottom: 14px; }
+.eligibility__title { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 16px; }
+.eligibility__title em { font-style: italic; color: var(--ochre); }
+.eligibility__body { font-size: 15.5px; line-height: 1.65; color: var(--ink-soft); }
+.eligibility__body strong { color: var(--ink); font-weight: 500; }
+.eligibility__criteria { display: flex; flex-direction: column; gap: 14px; }
+.eligibility__criterion { display: flex; gap: 16px; padding: 16px 18px; background: var(--paper); border: 1px solid var(--rule); }
+.eligibility__check { width: 22px; height: 22px; flex-shrink: 0; background: var(--ochre); color: var(--paper); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; border-radius: 50%; margin-top: 2px; }
+.eligibility__criterion-text { font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); }
+.eligibility__criterion-text strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: 2px; }
+
+
+.apply-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 80px); margin-top: 60px; align-items: start; }
+.apply-side { padding-top: 6px; }
+.apply-side h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.2; margin-bottom: 18px; letter-spacing: -0.02em; }
+.apply-side h3 em { font-style: italic; color: var(--ochre); }
+.apply-side p { color: var(--ink-soft); margin-bottom: 16px; line-height: 1.65; }
+.apply-side strong { color: var(--ink); font-weight: 500; }
+.apply-promise { margin-top: 36px; padding: 24px; border: 1px solid var(--rule); background: var(--paper-warm); }
+.apply-promise__label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre); margin-bottom: 12px; }
+.apply-promise__list { list-style: none; font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); }
+.apply-promise__list li { padding-left: 22px; position: relative; margin-bottom: 6px; }
+.apply-promise__list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--ochre); font-weight: 600; }
+.form { background: var(--paper); border: 1px solid var(--ink); padding: clamp(28px, 3vw, 44px); display: flex; flex-direction: column; gap: 20px; }
+.form__label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 6px; display: block; }
+.form__field { width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid var(--rule); background: transparent; font-family: var(--sans); font-size: 16px; color: var(--ink); transition: border-color 0.3s; cursor: none; }
+.form__field:focus { outline: none; border-color: var(--ink); }
+.form__field::placeholder { color: var(--ink-faint); }
+textarea.form__field { resize: vertical; min-height: 80px; padding-top: 14px; }
+select.form__field { padding-right: 24px; appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%2314110F' d='M0 0l6 8 6-8z'/></svg>"); background-repeat: no-repeat; background-position: right 4px center; }
+.form__submit { margin-top: 14px; padding: 16px 28px; background: var(--ink); color: var(--paper); border: none; font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: 0.02em; cursor: none; transition: background 0.3s, transform 0.3s var(--ease-out); display: inline-flex; align-items: center; gap: 12px; justify-content: center; }
+.form__submit:hover { background: var(--ochre); transform: translateY(-1px); }
+.form__success { margin-top: 14px; padding: 18px 22px; border: 1px solid var(--moss); background: rgba(74, 93, 58, 0.06); color: var(--moss); font-size: 14px; display: none; }
+.form__success.is-visible { display: block; animation: fadeUp 0.5s var(--ease-out); }
+
+
+.founders-deep { display: flex; flex-direction: column; gap: clamp(60px, 8vw, 120px); margin-top: 60px; }
+.founder { display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(40px, 5vw, 80px); align-items: start; border-top: 2px solid var(--ink); padding-top: clamp(40px, 5vw, 60px); }
+.founder:nth-child(even) { direction: rtl; }
+.founder:nth-child(even) > * { direction: ltr; }
+.founder__photo-wrap { position: relative; overflow: hidden; max-width: 400px; }
+.founder__avatar { width: 100%; height: auto; aspect-ratio: 3 / 4; border: 1px solid var(--rule); object-fit: cover; filter: grayscale(0.12); transition: filter 0.8s var(--ease-out), transform 0.8s var(--ease-out); }
+.founder:hover .founder__avatar { filter: grayscale(0); transform: scale(1.03); }
+.founder__content { display: flex; flex-direction: column; justify-content: center; padding-top: 10px; }
+.founder__role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre); margin-bottom: 14px; }
+.founder__name { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 56px); line-height: 1; letter-spacing: -0.03em; margin-bottom: 24px; }
+.founder__name em { font-style: italic; color: var(--ochre); }
+.founder__body { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+.founder__body p { margin-bottom: 14px; }
+.founder__body strong { color: var(--ink); font-weight: 500; }
+
+
+.footer { border-top: 2px solid var(--ink); padding: clamp(50px, 6vw, 90px) var(--gutter) 30px; background: var(--paper); position: relative; z-index: 1; }
+.footer__inner { max-width: var(--container); margin: 0 auto; }
+.footer__top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: clamp(30px, 5vw, 80px); margin-bottom: 60px; }
+.footer__brand { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 60; font-size: clamp(48px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.04em; }
+.footer__brand em { font-style: italic; color: var(--ochre); }
+.footer__brand-sub { margin-top: 14px; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 17px; color: var(--ink-mute); max-width: 32ch; }
+.footer__col h4 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre); margin-bottom: 18px; }
+.footer__col ul { list-style: none; }
+.footer__col ul li { margin-bottom: 10px; }
+.footer__col ul li a { font-size: 14px; color: var(--ink-soft); transition: color 0.2s; border-bottom: 1px solid transparent; padding-bottom: 1px; }
+.footer__col ul li a:hover { color: var(--ochre); border-color: var(--ochre); }
+.footer__bottom { border-top: 1px solid var(--rule); padding-top: 22px; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; color: var(--ink-mute); }
+.footer__bottom-row { display: flex; gap: 24px; }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); will-change: transform, opacity; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-60px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); will-change: transform, opacity; }
+.reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(60px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); will-change: transform, opacity; }
+.reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+.reveal-scale { opacity: 0; transform: scale(0.82); transition: opacity 0.8s var(--ease-out), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); will-change: transform, opacity; }
+.reveal-scale.is-visible { opacity: 1; transform: scale(1); }
+.reveal-stagger > * { opacity: 0; transform: translateY(30px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.13s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.21s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.29s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.37s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.45s; }
+.reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 0.53s; }
+.reveal-stagger.is-visible > *:nth-child(8) { transition-delay: 0.61s; }
+.hero__parallax-wrap { will-change: transform, opacity; }
+[data-parallax] { will-change: transform; transition: none; }
+.scroll-scale { transition: none; will-change: transform; }
+.section-divider-draw { position: relative; }
+.section-divider-draw::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--ease-out); }
+.section-divider-draw.is-visible::before { transform: scaleX(1); }
+.ticker-accel { transition: animation-duration 0.5s; }
+.form__loading { position: relative; pointer-events: none; opacity: 0.7; }
+.form__loading .form__submit::after { content: ""; display: inline-block; width: 14px; height: 14px; border: 2px solid var(--paper); border-top-color: transparent; border-radius: 50%; animation: formSpin 0.6s linear infinite; margin-left: 8px; vertical-align: middle; }
+@keyframes formSpin { to { transform: rotate(360deg); } }
+.form__error { margin-top: 14px; padding: 18px 22px; border: 1px solid var(--crimson); background: rgba(139, 44, 36, 0.06); color: var(--crimson); font-size: 14px; display: none; }
+.form__error.is-visible { display: block; animation: fadeUp 0.5s var(--ease-out); }
+.form-honeypot { position: absolute; left: -9999px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+}
+
+
+@media (max-width: 1100px) {
+  .nav__menu { gap: 22px; font-size: 13px; }
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+  .trust-item:nth-child(2n) { border-right: none; }
+  .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  .process-grid { grid-template-columns: 1fr 1fr; }
+  .process-cell { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .process-cell:nth-child(2n) { border-right: none; }
+  .process-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .service:nth-child(3n) { border-right: 1px solid var(--rule); }
+  .service:nth-child(2n) { border-right: none; }
+  .testimonials { grid-template-columns: 1fr 1fr; }
+  .testimonials .testimonial:last-child { display: none; }
+}
+@media (max-width: 820px) {
+  body { font-size: 15.5px; cursor: auto; }
+  .cursor, .cursor--ring { display: none; }
+  *, *::before, *::after { cursor: auto !important; }
+  a, button, input, select, textarea, .form__submit, .form__field, .nav__hamburger, .faq-item__q { cursor: pointer; }
+  .nav__menu {
+    position: fixed;
+    top: 67px;
+    left: 0;
+    right: 0;
+    background: rgba(244, 239, 230, 0.98);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--rule);
+    padding: 22px var(--gutter) 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s var(--ease-out), opacity 0.3s;
+  }
+  .nav__menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav__cta { margin-top: 6px; }
+  .nav__hamburger { display: block; }
+  .hero__bottom,
+  .giveback__inner,
+  .recruiters-banner__inner,
+  .final-cta__inner,
+  .apply-grid,
+  .founder,
+  .eligibility {
+    grid-template-columns: 1fr;
+  }
+  .hero { padding-top: 80px; }
+  .hero__title { max-width: 11ch; }
+  .hero__sub { max-width: 100%; }
+  .ticker__label { display: none; }
+  .ticker__track { padding-left: 0; }
+  .versus {
+    grid-template-columns: 1fr;
+  }
+  .versus__divider {
+    min-height: 54px;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .pillars,
+  .services-grid,
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+  .service,
+  .service:nth-child(2n),
+  .service:nth-child(3n) {
+    border-right: none;
+  }
+  .service:nth-last-child(-n+3) {
+    border-bottom: 1px solid var(--rule);
+  }
+  .service:last-child { border-bottom: none; }
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  .process-cell,
+  .process-cell:nth-child(2n),
+  .process-cell:nth-last-child(-n+2) {
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .process-cell:last-child { border-bottom: none; }
+  .timeline-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .timeline-step { padding-top: 0; }
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__brand-wrap {
+    grid-column: 1 / -1;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  :root { --gutter: 18px; }
+  .nav { padding-top: 16px; padding-bottom: 16px; }
+  .view { padding-top: 70px; }
+  .hero__cta-row,
+  .giveback__cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-primary,
+  .btn-secondary,
+  .btn-onlight,
+  .btn-onlight-secondary,
+  .final-cta__btn,
+  .final-cta__btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  .trust-strip { grid-template-columns: 1fr; }
+  .trust-item {
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .trust-item:last-child { border-bottom: none; }
+  .form { padding: 24px 20px; }
+  .footer__top { grid-template-columns: 1fr; }
+  .footer__bottom-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor--ring" aria-hidden="true"></div>
+
+<div class="loader" id="loader">
+  <div class="loader__mark">
+    <span>Zy</span><span><em>theq</em></span>
+  </div>
+  <div class="loader__bar"></div>
+  <div class="loader__label">Preparing the search</div>
+</div>
+
+<nav class="nav" id="nav">
+  <a href="#home" class="nav__brand nav__brand--text" data-route="home">
+  <span>Zy<em>theq</em></span>
+</a>
+  <div class="nav__menu" id="navMenu">
+    <a href="#professionals" class="nav__link" data-route="professionals">For professionals</a>
+    <a href="#recruiters" class="nav__link" data-route="recruiters">For recruiters</a>
+    <a href="#process" class="nav__link" data-route="process">Process</a>
+    <a href="#founders" class="nav__link" data-route="founders">Founders</a>
+    <a href="#apply" class="nav__cta" data-route="apply">Apply now</a>
+  </div>
+
+  <button class="nav__hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<main>
+  <section id="home" class="view is-active">
+    <div class="hero">
+      <div class="container">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Job search execution with a give-back model
+        </div>
+
+        <h1 class="hero__title" data-reveal-title>
+          We run your job search while you <em>mentor</em> the next generation.
+        </h1>
+
+        <div class="hero__bottom">
+          <p class="hero__sub">
+            Zytheq handles resumes, LinkedIn, applications, recruiter outreach, and interview prep for senior US professionals.<br> In return, you give a few hours a week to an Indian student who needs your experience.
+          </p>
+
+          <div class="hero__cta-block">
+            <div class="hero__cta-row">
+              <a href="#apply" class="btn-primary" data-route="apply">
+                Start your search <span class="btn-primary-arrow">→</span>
+              </a>
+              <a href="#recruiters" class="btn-secondary" data-route="recruiters">
+                Recruiter pipeline <span class="btn-secondary-arrow">→</span>
+              </a>
+            </div>
+            <div class="hero__cta-note">US citizens and Green Card holders · 5+ years experience</div>
+          </div>
+        </div>
+
+        <div class="trust-strip reveal-stagger">
+          <div class="trust-item">
+            <div class="trust-item__num">3<em>x</em></div>
+            <div class="trust-item__label">Resume variants by target track</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-item__num">4-5</div>
+            <div class="trust-item__label">Mentorship hours per week</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-item__num">0</div>
+            <div class="trust-item__label">Recruiter sourcing fee on first intros</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-item__num">5+</div>
+            <div class="trust-item__label">Years experience required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticker">
+      <div class="ticker__label">We execute</div>
+      <div class="ticker__track">
+        <div class="ticker__item"><strong>Resume engineering</strong><span>ATS-ready</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>LinkedIn rewrite</strong><span>Recruiter-facing</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>Targeted applications</strong><span>Tracked weekly</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>Recruiter outreach</strong><span>Personalized</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>Interview prep</strong><span>Company-specific</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>Student mentorship</strong><span>Structured curriculum</span><span class="ticker__dot"></span></div>
+
+        <div class="ticker__item"><strong>Resume engineering</strong><span>ATS-ready</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>LinkedIn rewrite</strong><span>Recruiter-facing</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>Targeted applications</strong><span>Tracked weekly</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>Recruiter outreach</strong><span>Personalized</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>Interview prep</strong><span>Company-specific</span><span class="ticker__dot"></span></div>
+        <div class="ticker__item"><strong>Student mentorship</strong><span>Structured curriculum</span><span class="ticker__dot"></span></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__label reveal">The problem</div>
+        <h2 class="section__title reveal">Great careers stall because the search is a <em>full-time job.</em></h2>
+        <p class="section__intro reveal">
+          Senior professionals know how to lead teams, ship systems, close deals, and build companies. But the modern search rewards constant targeting, rewriting, outreach, follow-up, and preparation.
+        </p>
+
+        <div class="versus">
+          <div class="versus__col reveal-left">
+            <div class="versus__head">Traditional search</div>
+            <div class="versus__line">You rewrite your resume for every role.</div>
+            <div class="versus__line">You send cold applications into crowded systems.</div>
+            <div class="versus__line">You chase recruiters without a clear campaign.</div>
+            <div class="versus__line">You prepare only after an interview appears.</div>
+          </div>
+
+          <div class="versus__divider reveal-scale">vs</div>
+
+          <div class="versus__col versus__col--right reveal-right">
+            <div class="versus__head">Zytheq search</div>
+            <div class="versus__line">We build role-specific positioning assets.</div>
+            <div class="versus__line">We run targeted applications with weekly tracking.</div>
+            <div class="versus__line">We write recruiter and hiring-manager outreach.</div>
+            <div class="versus__line">We prep you before the conversation starts.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="giveback">
+      <div class="giveback__inner">
+        <div>
+          <div class="giveback__label reveal-left">The give-back</div>
+          <h2 class="giveback__title reveal-left">Your experience becomes someone else's <em>launchpad.</em></h2>
+          <p class="giveback__lede reveal">
+            You do not pay us with money first. You pay forward what you already know.
+          </p>
+          <div class="giveback__body reveal">
+            <p>
+              Qualified US citizens and Green Card holders with five or more years of experience join our mentor-led program.
+            </p>
+            <p>
+              In exchange for running your search, we match you with an Indian student who benefits from your professional judgment, communication habits, and career perspective.
+            </p>
+            <p>
+              <strong>We provide the structure. You bring the lived experience.</strong>
+            </p>
+          </div>
+
+          <div class="giveback__cta-row reveal">
+            <a href="#professionals" class="btn-onlight" data-route="professionals">See how it works →</a>
+            <a href="#apply" class="btn-onlight-secondary" data-route="apply">Check eligibility →</a>
+          </div>
+        </div>
+
+        <div class="giveback__stats reveal-stagger reveal-right" style="transform-origin:right center">
+          <div class="giveback__stat">
+            <div class="giveback__stat-label">Mentorship</div>
+            <div class="giveback__stat-value">4-5 hrs</div>
+            <div class="giveback__stat-sub">Per week, evenings, over Zoom</div>
+          </div>
+          <div class="giveback__stat">
+            <div class="giveback__stat-label">Support</div>
+            <div class="giveback__stat-value">End-to-end</div>
+            <div class="giveback__stat-sub">Resume, LinkedIn, outreach, prep</div>
+          </div>
+          <div class="giveback__stat">
+            <div class="giveback__stat-label">Outcome</div>
+            <div class="giveback__stat-value">Dual impact</div>
+            <div class="giveback__stat-sub">Your next role and a student's next step</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__label reveal">What we handle</div>
+        <h2 class="section__title reveal">A search machine built around your <em>positioning.</em></h2>
+
+        <div class="services-grid reveal-stagger" style="--stagger-base: 0.08s">
+          <div class="service">
+            <div class="service__num">01</div>
+            <h3 class="service__title">Resume <em>variants</em></h3>
+            <p class="service__body">Three targeted versions built around the roles, industries, and seniority bands you want.</p>
+          </div>
+          <div class="service">
+            <div class="service__num">02</div>
+            <h3 class="service__title">LinkedIn <em>overhaul</em></h3>
+            <p class="service__body">A recruiter-facing profile with sharper headline, summary, experience framing, and keyword coverage.</p>
+          </div>
+          <div class="service">
+            <div class="service__num">03</div>
+            <h3 class="service__title">Application <em>campaign</em></h3>
+            <p class="service__body">Target lists, application tracking, role matching, and weekly visibility into where your search stands.</p>
+          </div>
+          <div class="service">
+            <div class="service__num">04</div>
+            <h3 class="service__title">Recruiter <em>outreach</em></h3>
+            <p class="service__body">Personalized messages for recruiters, hiring managers, and operators at your target companies.</p>
+          </div>
+          <div class="service">
+            <div class="service__num">05</div>
+            <h3 class="service__title">Interview <em>prep</em></h3>
+            <p class="service__body">Mock interviews, company briefs, role narratives, and answer frameworks for high-stakes conversations.</p>
+          </div>
+          <div class="service">
+            <div class="service__num">06</div>
+            <h3 class="service__title">Mentor <em>structure</em></h3>
+            <p class="service__body">Guided student sessions so your mentorship is useful, focused, and respectful of your schedule.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recruiters-banner">
+      <div class="recruiters-banner__inner">
+        <div class="reveal-left">
+          <div class="recruiters-banner__label">For recruiters</div>
+          <h2 class="recruiters-banner__title">Pre-vetted talent without the <em>noise.</em></h2>
+          <p class="recruiters-banner__body">
+            Recruiters receive candidates who have been positioned, screened, and prepared before the first conversation.
+          </p>
+          <a href="#recruiters" class="btn-secondary" data-route="recruiters">Build your candidate pipeline →</a>
+        </div>
+
+        <ul class="recruiters-banner__list reveal-stagger reveal-right" style="transform-origin:right center">
+          <li><strong>Interview-ready profiles</strong> with clean resumes and calibrated expectations.</li>
+          <li><strong>No sourcing fee</strong> on initial introductions while we build partner relationships.</li>
+          <li><strong>Candidate prep history</strong> so you know what they are ready to discuss.</li>
+          <li><strong>Volume that scales</strong> by role family, seniority, and hiring urgency.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__label reveal">Proof of intent</div>
+        <h2 class="section__title reveal">Built for serious candidates, not casual <em>clickers.</em></h2>
+
+        <div class="testimonials">
+          <div class="testimonial reveal-scale">
+            <div class="testimonial__mark">“</div>
+            <p class="testimonial__quote">The strongest part was having someone turn my experience into a real market campaign instead of a generic resume.</p>
+            <div class="testimonial__attr">
+              <div class="testimonial__avatar">SP</div>
+              <div>
+                <div class="testimonial__name">Senior Product Leader</div>
+                <div class="testimonial__role">B2B SaaS</div>
+              </div>
+              <div class="testimonial__tag">Candidate</div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal-scale" style="transition-delay:0.12s">
+            <div class="testimonial__mark">“</div>
+            <p class="testimonial__quote">The mentorship made the model feel different. I was getting help, but also giving something meaningful back.</p>
+            <div class="testimonial__attr">
+              <div class="testimonial__avatar">DE</div>
+              <div>
+                <div class="testimonial__name">Data Engineering Manager</div>
+                <div class="testimonial__role">Fintech</div>
+              </div>
+              <div class="testimonial__tag">Mentor</div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal-scale" style="transition-delay:0.24s">
+            <div class="testimonial__mark">“</div>
+            <p class="testimonial__quote">The candidates came in with sharper stories and cleaner materials than most inbound applicants.</p>
+            <div class="testimonial__attr">
+              <div class="testimonial__avatar">TR</div>
+              <div>
+                <div class="testimonial__name">Technical Recruiter</div>
+                <div class="testimonial__role">Growth-stage company</div>
+              </div>
+              <div class="testimonial__tag">Recruiter</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="final-cta__inner">
+        <div>
+          <h2 class="final-cta__title reveal">Ready to make your next move <em>less lonely?</em></h2>
+          <p class="final-cta__sub reveal">
+            Bring your experience. We bring the search infrastructure. A student gets a mentor.
+          </p>
+        </div>
+
+        <div class="final-cta__action reveal">
+          <a href="#apply" class="final-cta__btn" data-route="apply">Apply for Zytheq →</a>
+          <a href="#recruiters" class="final-cta__btn-secondary" data-route="recruiters">I am hiring talent →</a>
+          <div class="final-cta__note">Discovery calls are reviewed manually.</div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="professionals" class="view">
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header__breadcrumb">
+          <a href="#home" data-route="home">Home</a>
+          <span>/</span>
+          <span>Professionals</span>
+        </div>
+        <h1 class="page-header__title">Your search, rebuilt as a <em>campaign.</em></h1>
+        <p class="page-header__lede">
+          We do the heavy execution so you can focus on your current work, interviews, and mentoring a student who can learn from your path.
+        </p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__label reveal">Program fit</div>
+        <h2 class="section__title reveal">For senior professionals who are ready to move with <em>intent.</em></h2>
+
+        <div class="eligibility reveal">
+          <div>
+            <div class="eligibility__head">Eligibility</div>
+            <h3 class="eligibility__title">The give-back path is for qualified <em>US professionals.</em></h3>
+            <p class="eligibility__body">
+              The mentorship-based program is designed for US citizens and Green Card holders with five or more years of experience. Other candidates may still work with Zytheq under separate terms discussed on a discovery call.
+            </p>
+          </div>
+
+          <div class="eligibility__criteria">
+            <div class="eligibility__criterion">
+              <div class="eligibility__check">✓</div>
+              <div class="eligibility__criterion-text">
+                <strong>US citizen or Green Card holder</strong>
+                Built for professionals with stable US work authorization.
+              </div>
+            </div>
+            <div class="eligibility__criterion">
+              <div class="eligibility__check">✓</div>
+              <div class="eligibility__criterion-text">
+                <strong>Five plus years experience</strong>
+                Enough real-world context to mentor with substance.
+              </div>
+            </div>
+            <div class="eligibility__criterion">
+              <div class="eligibility__check">✓</div>
+              <div class="eligibility__criterion-text">
+                <strong>One to three hours weekly</strong>
+                Evening mentorship sessions over Zoom.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar reveal-left">
+            <div class="pillar__num">01</div>
+            <h3 class="pillar__title">We clarify your <em>market story.</em></h3>
+            <p class="pillar__body">
+              We translate your experience into target titles, role families, value propositions, and measurable outcomes recruiters can quickly understand.
+            </p>
+          </div>
+
+          <div class="pillar reveal-right">
+            <div class="pillar__num">02</div>
+            <h3 class="pillar__title">We execute the <em>search motion.</em></h3>
+            <p class="pillar__body">
+              We manage role targeting, applications, outreach, follow-ups, and prep assets so the search keeps moving even when your week is full.
+            </p>
+          </div>
+
+          <div class="pillar reveal-left" style="transition-delay:0.12s">
+            <div class="pillar__num">03</div>
+            <h3 class="pillar__title">You mentor with <em>structure.</em></h3>
+            <p class="pillar__body">
+              We give you guided prompts and session goals. You share the judgment, habits, and stories that students rarely get from textbooks.
+            </p>
+          </div>
+
+          <div class="pillar reveal-right" style="transition-delay:0.12s">
+            <div class="pillar__num">04</div>
+            <h3 class="pillar__title">We prepare for <em>conversion.</em></h3>
+            <p class="pillar__body">
+              Once conversations start, we help you sharpen role narratives, executive presence, technical stories, and company-specific answers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bigquote">
+      <div class="container">
+        <blockquote class="bigquote__text reveal">
+          “Your career experience is not just proof of what you have done. It can become a bridge for someone who has not had access yet.”
+        </blockquote>
+        <div class="bigquote__attr reveal">Zytheq principle</div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="final-cta__inner">
+        <div>
+          <h2 class="final-cta__title reveal">Let us run the search. You create the <em>impact.</em></h2>
+          <p class="final-cta__sub reveal">Apply once. We review fit manually and follow up with next steps.</p>
+        </div>
+        <div class="final-cta__action reveal">
+          <a href="#apply" class="final-cta__btn" data-route="apply">Apply as a professional →</a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="recruiters" class="view">
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header__breadcrumb">
+          <a href="#home" data-route="home">Home</a>
+          <span>/</span>
+          <span>Recruiters</span>
+        </div>
+        <h1 class="page-header__title">A cleaner way to meet <em>prepared talent.</em></h1>
+        <p class="page-header__lede">
+          Zytheq candidates are not random inbound resumes. They come with clarified positioning, polished materials, prep history, and a serious search motion.
+        </p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__label reveal">Recruiting value</div>
+        <h2 class="section__title reveal">Less screening noise. More interview-ready <em>signal.</em></h2>
+
+        <div class="process-grid reveal-stagger">
+          <div class="process-cell">
+            <div class="process-cell__step">01</div>
+            <h3 class="process-cell__title">Vetted <em>intent</em></h3>
+            <p class="process-cell__body">Candidates enter through a reviewed program, not a one-click application funnel.</p>
+            <div class="process-cell__metric"><strong>Signal:</strong> serious searchers</div>
+          </div>
+
+          <div class="process-cell">
+            <div class="process-cell__step">02</div>
+            <h3 class="process-cell__title">Cleaner <em>materials</em></h3>
+            <p class="process-cell__body">Resumes and LinkedIn profiles are rebuilt for clarity, relevance, and faster recruiter review.</p>
+            <div class="process-cell__metric"><strong>Signal:</strong> sharper profiles</div>
+          </div>
+
+          <div class="process-cell">
+            <div class="process-cell__step">03</div>
+            <h3 class="process-cell__title">Prepared <em>stories</em></h3>
+            <p class="process-cell__body">Candidates are coached on role narratives, project depth, and company-specific preparation.</p>
+            <div class="process-cell__metric"><strong>Signal:</strong> stronger screens</div>
+          </div>
+
+          <div class="process-cell">
+            <div class="process-cell__step">04</div>
+            <h3 class="process-cell__title">Scalable <em>pipeline</em></h3>
+            <p class="process-cell__body">We can align candidate flow to your req load, target roles, seniority, and hiring timelines.</p>
+            <div class="process-cell__metric"><strong>Signal:</strong> faster matching</div>
+          </div>
+        </div>
+
+        <div class="faq reveal">
+          <div class="faq-item">
+            <button class="faq-item__q" type="button">
+              Do recruiters pay for introductions?
+              <span class="faq-item__icon"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p>No sourcing fee on initial introductions while we build trusted hiring partnerships. For deeper retained work or high-volume pipelines, terms are discussed separately.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button">
+              What roles can Zytheq support?
+              <span class="faq-item__icon"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p>We are strongest with experienced professionals across engineering, product, data, operations, business, and leadership roles. Availability depends on active candidate cohorts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button">
+              Are candidates actively prepared?
+              <span class="faq-item__icon"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p>Yes. We help candidates sharpen resumes, LinkedIn profiles, outreach narratives, interview stories, and company-specific preparation before or during active recruiting conversations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="apply-grid reveal">
+          <div class="apply-side">
+            <h3>Want candidate flow for open <em>reqs?</em></h3>
+            <p>
+              Tell us the roles, seniority, must-have skills, location requirements, and hiring timeline. We will identify whether our active candidate pool matches your needs.
+            </p>
+            <p>
+              For urgent or specialized searches, we can discuss a focused pipeline partnership.
+            </p>
+          </div>
+
+          <form class="form" data-form="recruiter">
+            <input type="hidden" name="access_key" value="74dad64e-afbc-4dde-8455-e6e72d69a8ee">
+            <input type="hidden" name="subject" value="New Recruiter Inquiry — Zytheq">
+            <input type="hidden" name="from_name" value="Zytheq Website">
+            <input type="hidden" name="replyto">
+            <div class="form-honeypot"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></div>
+            <div>
+              <label class="form__label" for="recName">Name</label>
+              <input class="form__field" id="recName" name="name" type="text" placeholder="Your name" required autocomplete="name">
+            </div>
+            <div>
+              <label class="form__label" for="recEmail">Work email</label>
+              <input class="form__field" id="recEmail" name="email" type="email" placeholder="you@company.com" required autocomplete="email">
+            </div>
+            <div>
+              <label class="form__label" for="recCompany">Company</label>
+              <input class="form__field" id="recCompany" name="company" type="text" placeholder="Company name" autocomplete="organization">
+            </div>
+            <div>
+              <label class="form__label" for="recNeeds">Hiring needs</label>
+              <textarea class="form__field" id="recNeeds" name="needs" placeholder="Roles, seniority, locations, must-have skills"></textarea>
+            </div>
+            <button class="form__submit" type="submit">Request candidates <span style="display:inline-block;transition:transform 0.3s var(--ease-out)">→</span></button>
+            <div class="form__success">Your inquiry has been received. We will review your hiring needs and follow up shortly.</div>
+            <div class="form__error">Something went wrong. Please email us directly at contact@zytheq.com.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="process" class="view">
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header__breadcrumb">
+          <a href="#home" data-route="home">Home</a>
+          <span>/</span>
+          <span>Process</span>
+        </div>
+        <h1 class="page-header__title">A structured search from intake to <em>interview.</em></h1>
+        <p class="page-header__lede">
+          Zytheq combines career positioning, search operations, recruiter outreach, interview preparation, and mentorship into one coordinated program.
+        </p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__label reveal">Timeline</div>
+        <h2 class="section__title reveal">How the program <em>moves.</em></h2>
+
+        <div class="process-timeline reveal">
+          <div class="timeline-row reveal-left">
+            <div class="timeline-step">Step 01</div>
+            <h3 class="timeline-title">Discovery and <em>fit</em></h3>
+            <div class="timeline-body">
+              <p>We review your background, authorization, experience level, target roles, salary expectations, and mentorship availability.</p>
+              <p><strong>Output:</strong> program fit decision and search direction.</p>
+            </div>
+          </div>
+
+          <div class="timeline-row reveal-right">
+            <div class="timeline-step">Step 02</div>
+            <h3 class="timeline-title">Positioning and <em>assets</em></h3>
+            <div class="timeline-body">
+              <p>We rebuild your resume variants, LinkedIn profile, target company list, and baseline outreach language.</p>
+              <p><strong>Output:</strong> recruiter-ready materials and role-specific messaging.</p>
+            </div>
+          </div>
+
+          <div class="timeline-row reveal-left">
+            <div class="timeline-step">Step 03</div>
+            <h3 class="timeline-title">Applications and <em>outreach</em></h3>
+            <div class="timeline-body">
+              <p>We run a tracked campaign across target roles, recruiters, hiring managers, and warm paths where available.</p>
+              <p><strong>Output:</strong> weekly visibility, follow-ups, and active pipeline management.</p>
+            </div>
+          </div>
+
+          <div class="timeline-row reveal-right">
+            <div class="timeline-step">Step 04</div>
+            <h3 class="timeline-title">Mentorship and <em>impact</em></h3>
+            <div class="timeline-body">
+              <p>You mentor an Indian student four to five hours per week through structured sessions and practical career conversations.</p>
+              <p><strong>Output:</strong> measurable student support without inventing a curriculum from scratch.</p>
+            </div>
+          </div>
+
+          <div class="timeline-row reveal-left">
+            <div class="timeline-step">Step 05</div>
+            <h3 class="timeline-title">Interview and <em>close</em></h3>
+            <div class="timeline-body">
+              <p>We help you prepare company briefs, role narratives, behavioral stories, technical examples, and negotiation readiness.</p>
+              <p><strong>Output:</strong> clearer conversations and stronger interview conversion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="founders" class="view">
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header__breadcrumb">
+          <a href="#home" data-route="home">Home</a>
+          <span>/</span>
+          <span>Founders</span>
+        </div>
+        <h1 class="page-header__title">Built by operators who believe careers should create <em>access.</em></h1>
+        <p class="page-header__lede">
+          Zytheq exists because career help and student mentorship should not live in separate worlds.
+        </p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__label reveal">Leadership</div>
+        <h2 class="section__title reveal">The people behind <em>Zytheq.</em></h2>
+
+        <div class="founders-deep">
+          <article class="founder reveal">
+            <div class="founder__photo-wrap reveal-left">
+              <img class="founder__avatar" src="zythos it is.png" alt="Zythos, Founder of Zytheq" loading="lazy">
+            </div>
+            <div class="founder__content reveal-right">
+              <div class="founder__role">Founder</div>
+              <h3 class="founder__name">Tech guy,<br>core decisions <br><em>-Zythos.</em></h3>
+              <div class="founder__body">
+                <p>
+                  i like tech i hate repetitive work. i solve that using tech and A.I.
+                </p>
+                <p>yes A.I. is a big part of our approach.<br>now enroll now because i used the word "A.I."</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="founder reveal">
+            <div class="founder__photo-wrap reveal-right">
+              <img class="founder__avatar" src="dhyey it is.png" alt="Dhyey, Co-founder of Zytheq" loading="lazy">
+            </div>
+            <div class="founder__content reveal-left">
+              <div class="founder__role">Co-founder</div>
+              <h3 class="founder__name">Management guy,<br>Team growth <br><em>-Dhyey.</em></h3>
+              <div class="founder__body">
+                <p>
+                  Giving back the revenue to the employee of Zytheq is the core principle of the company. Dhyey is the one who is responsible for implementing this model.
+                </p>
+                <p>
+                  He believes in the power of mentorship and wanted to do something that would not only help job seekers but also give back to the community. By creating a mentorship-based give-back model, Dhyey aimed to provide a platform where experienced professionals could share their knowledge and expertise with students who are just starting their careers.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="apply" class="view">
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header__breadcrumb">
+          <a href="#home" data-route="home">Home</a>
+          <span>/</span>
+          <span>Apply</span>
+        </div>
+        <h1 class="page-header__title">Apply to join the <em>Zytheq</em> program.</h1>
+        <p class="page-header__lede">
+          Tell us where you are in your career, what kind of search you want to run, and whether you qualify for the mentorship-based give-back model.
+        </p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="apply-grid">
+          <div class="apply-side reveal">
+            <h3>Before you apply, make sure this is the right <em>fit.</em></h3>
+            <p>
+              Zytheq works best for experienced professionals who are serious about a US job search and open to mentoring a student consistently.
+            </p>
+            <p>
+              <strong>Qualified give-back applicants:</strong> US citizens or Green Card holders with five or more years of professional experience.
+            </p>
+            <p>
+              Others may still apply, but the terms may differ.
+            </p>
+
+            <div class="apply-promise">
+              <div class="apply-promise__label">What happens next</div>
+              <ul class="apply-promise__list">
+                <li>We review your form manually.</li>
+                <li>We check fit for search support and mentorship.</li>
+                <li>We follow up if there is a strong match.</li>
+                <li>No automated spam or resume database dumping.</li>
+              </ul>
+            </div>
+          </div>
+
+          <form class="form reveal" data-form="candidate">
+            <input type="hidden" name="access_key" value="74dad64e-afbc-4dde-8455-e6e72d69a8ee">
+            <input type="hidden" name="subject" value="New Candidate Application — Zytheq">
+            <input type="hidden" name="from_name" value="Zytheq Website">
+            <input type="hidden" name="replyto">
+            <div class="form-honeypot"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></div>
+            <div>
+              <label class="form__label" for="name">Full name</label>
+              <input class="form__field" id="name" name="name" type="text" placeholder="Your name" required autocomplete="name">
+            </div>
+            <div>
+              <label class="form__label" for="email">Email</label>
+              <input class="form__field" id="email" name="email" type="email" placeholder="you@email.com" required autocomplete="email">
+            </div>
+            <div>
+              <label class="form__label" for="status">Work authorization</label>
+              <select class="form__field" id="status" name="status" required>
+                <option value="">Select one</option>
+                <option>US Citizen</option>
+                <option>Green Card Holder</option>
+                <option>H-1B / work visa</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="form__label" for="experience">Years of experience</label>
+              <select class="form__field" id="experience" name="experience" required>
+                <option value="">Select one</option>
+                <option>0–2 years</option>
+                <option>3–4 years</option>
+                <option>5–8 years</option>
+                <option>9–14 years</option>
+                <option>15+ years</option>
+              </select>
+            </div>
+            <div>
+              <label class="form__label" for="target">Target roles</label>
+              <input class="form__field" id="target" name="target" type="text" placeholder="Engineering Manager, Product Lead, Data Architect...">
+            </div>
+            <div>
+              <label class="form__label" for="linkedin">LinkedIn URL</label>
+              <input class="form__field" id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/...">
+            </div>
+            <div>
+              <label class="form__label" for="message">What should we know?</label>
+              <textarea class="form__field" id="message" name="message" placeholder="Current situation, timeline, target companies, mentorship availability..."></textarea>
+            </div>
+            <button class="form__submit" type="submit">Submit application <span style="display:inline-block;transition:transform 0.3s var(--ease-out)">→</span></button>
+            <div class="form__success">Thank you. Your application has been received and will be reviewed manually. We will follow up if there is a strong match.</div>
+            <div class="form__error">Something went wrong. Please email us directly at contact@zytheq.com.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand-wrap">
+        <div class="footer__brand">Zy<em>theq</em></div>
+        <p class="footer__brand-sub">
+          We run your job search while you mentor the next generation.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#home" data-route="home">Home</a></li>
+          <li><a href="#founders" data-route="founders">Founders</a></li>
+          <li><a href="#process" data-route="process">Process</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#professionals" data-route="professionals">Professionals</a></li>
+          <li><a href="#recruiters" data-route="recruiters">Recruiters</a></li>
+          <li><a href="#apply" data-route="apply">Apply</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@zytheq.com">contact@zytheq.com</a></li>
+          <li><a href="https://www.linkedin.com/company/zytheq" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://twitter.com/zytheq" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div>© <span id="year"></span> Zytheq. All rights reserved.</div>
+      <div class="footer__bottom-row">
+        <span>Brooklyn, NY</span>
+        <span>Ahmedabad, GJ</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  console.log(
+    "%cmade by zythos",
+    "color:#B7410E;font-family:'Fraunces',serif;font-size:28px;font-weight:300;font-style:italic;padding:16px 0;text-shadow:0 1px 2px rgba(0,0,0,.15)"
+  );
+
+  var loader = document.getElementById("loader");
+  var nav = document.getElementById("nav");
+  var navToggle = document.getElementById("navToggle");
+  var navMenu = document.getElementById("navMenu");
+  var views = document.querySelectorAll(".view");
+  var routeLinks = document.querySelectorAll("[data-route]");
+  var navLinks = document.querySelectorAll(".nav__link");
+  var cursor = document.querySelector(".cursor");
+  var cursorRing = document.querySelector(".cursor--ring");
+  var formTimestamps = {};
+  var RATE_LIMIT_MS = 30000;
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  window.addEventListener("load", function() {
+    setTimeout(function() { loader.classList.add("is-done"); }, 1550);
+    revealHeroTitle();
+    triggerReveals();
+    initParallax();
+  });
+
+  function revealHeroTitle() {
+    var title = document.querySelector("[data-reveal-title]");
+    if (!title || title.dataset.ready === "true") return;
+    var nodes = Array.from(title.childNodes);
+    title.innerHTML = "";
+    nodes.forEach(function(node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent.split(/(\s+)/).forEach(function(part) {
+          if (!part.trim()) { title.append(document.createTextNode(part)); return; }
+          var word = document.createElement("span");
+          word.className = "reveal-word";
+          word.innerHTML = "<span>" + part + "</span>";
+          title.appendChild(word);
+        });
+      } else {
+        var wrapper = document.createElement("span");
+        wrapper.className = "reveal-word";
+        wrapper.innerHTML = "<span>" + node.outerHTML + "</span>";
+        title.appendChild(wrapper);
+      }
+    });
+    title.querySelectorAll(".reveal-word > span").forEach(function(word, i) {
+      word.style.animationDelay = (i * 0.055) + "s";
+    });
+    title.dataset.ready = "true";
+  }
+
+  function setRoute(route) {
+    var target = document.getElementById(route);
+    if (!target) return;
+    views.forEach(function(v) { v.classList.toggle("is-active", v.id === route); });
+    navLinks.forEach(function(l) { l.classList.toggle("is-active", l.dataset.route === route); });
+    navMenu.classList.remove("is-open");
+    navToggle.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    requestAnimationFrame(function() {
+      var view = document.getElementById(route);
+      if (view) view.querySelectorAll(".is-visible").forEach(function(el) { el.classList.remove("is-visible"); });
+      triggerReveals(true);
+      if (route === "home") { revealHeroTitle(); initParallax(); }
+    });
+  }
+
+  routeLinks.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+      var route = link.dataset.route;
+      if (!route) return;
+      e.preventDefault();
+      history.pushState({ route: route }, "", "#" + route);
+      setRoute(route);
+    });
+  });
+
+  window.addEventListener("popstate", function() { setRoute(location.hash.replace("#", "") || "home"); });
+  window.addEventListener("DOMContentLoaded", function() { setRoute(location.hash.replace("#", "") || "home"); });
+
+  navToggle.addEventListener("click", function() {
+    var isOpen = navMenu.classList.toggle("is-open");
+    navToggle.classList.toggle("is-open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  var scrollTicking = false;
+  window.addEventListener("scroll", function() {
+    nav.classList.toggle("is-scrolled", window.scrollY > 12);
+    if (!scrollTicking) {
+      requestAnimationFrame(function() {
+        triggerReveals();
+        runParallax();
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  }, { passive: true });
+
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        if (entry.target.hasAttribute("data-count-target")) animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+
+  document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger, .section-divider-draw").forEach(function(el) {
+    revealObserver.observe(el);
+  });
+
+  function triggerReveals(force) {
+    var sel = ".view.is-active .reveal, .view.is-active .reveal-left, .view.is-active .reveal-right, .view.is-active .reveal-scale, .view.is-active .reveal-stagger, .view.is-active .section-divider-draw";
+    document.querySelectorAll(sel).forEach(function(item) {
+      var rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.88 && rect.bottom > 0 || force) {
+        item.classList.add("is-visible");
+        if (item.hasAttribute("data-count-target")) animateCounter(item);
+      }
+    });
+  }
+
+  var trustNums = document.querySelectorAll(".trust-item__num");
+  trustNums.forEach(function(el) {
+    var text = el.textContent.trim();
+    var match = text.match(/^(\d+)/);
+    if (match && parseInt(match[1]) > 0) {
+      el.setAttribute("data-count-target", match[1]);
+      el.setAttribute("data-count-suffix", text.replace(match[1], ""));
+      el.textContent = "0" + text.replace(match[1], "");
+    }
+  });
+
+  function animateCounter(el) {
+    if (el.dataset.counted === "true") return;
+    el.dataset.counted = "true";
+    var target = parseInt(el.dataset.countTarget);
+    var suffix = el.dataset.countSuffix || "";
+    var duration = 1200;
+    var start = performance.now();
+    function step(now) {
+      var p = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var parallaxEls = [];
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function initParallax() {
+    parallaxEls = [];
+    if (reducedMotion) return;
+
+    var activeView = document.querySelector(".view.is-active");
+    if (!activeView) return;
+
+    activeView.querySelectorAll(".hero .container").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: 0.2, fade: true, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".section__title, .page-header__title").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: 0.06, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".section__label, .giveback__label, .page-header__breadcrumb").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: 0.04, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".bigquote__text").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: 0.08, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".final-cta__title").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: 0.07, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".giveback__title").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: 0.06, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".founder__avatar").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: -0.05, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".trust-item__num").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: 0.04, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".testimonial").forEach(function(el, i) {
+      parallaxEls.push({ el: el, speed: 0.02 + (i % 3) * 0.015, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".process-cell").forEach(function(el, i) {
+      parallaxEls.push({ el: el, speed: 0.015 + (i % 4) * 0.01, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".service").forEach(function(el, i) {
+      parallaxEls.push({ el: el, speed: 0.012 + (i % 3) * 0.01, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".timeline-row").forEach(function(el, i) {
+      parallaxEls.push({ el: el, speed: 0.03, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".pillar").forEach(function(el, i) {
+      parallaxEls.push({ el: el, speed: 0.02 + (i % 2) * 0.015, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".giveback__stat").forEach(function(el, i) {
+      parallaxEls.push({ el: el, speed: 0.025, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".eligibility__criterion").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: 0.02, fade: false, origin: 0 });
+    });
+
+    activeView.querySelectorAll(".versus__col").forEach(function(el) {
+      parallaxEls.push({ el: el, speed: 0.03, fade: false, origin: 0 });
+    });
+
+    runParallax();
+  }
+
+  function runParallax() {
+    if (reducedMotion || parallaxEls.length === 0) return;
+    var scrollY = window.scrollY;
+    var viewH = window.innerHeight;
+
+    for (var i = 0; i < parallaxEls.length; i++) {
+      var item = parallaxEls[i];
+      var rect = item.el.getBoundingClientRect();
+      var elCenter = rect.top + rect.height * 0.5;
+      var viewCenter = viewH * 0.5;
+      var distance = (elCenter - viewCenter) / viewH;
+      var translateY = distance * item.speed * viewH * -1;
+
+      if (rect.bottom < -200 || rect.top > viewH + 200) continue;
+
+      if (item.fade) {
+        var opacity = Math.max(0, 1 - scrollY / (viewH * 0.6));
+        item.el.style.transform = "translateY(" + (scrollY * item.speed) + "px)";
+        item.el.style.opacity = opacity;
+      } else {
+        item.el.style.transform = "translateY(" + translateY.toFixed(1) + "px)";
+      }
+    }
+  }
+
+  var tickerTrack = document.querySelector(".ticker__track");
+  if (tickerTrack) {
+    var lastScrollY = 0;
+    window.addEventListener("scroll", function() {
+      var velocity = Math.abs(window.scrollY - lastScrollY);
+      lastScrollY = window.scrollY;
+      if (velocity > 8) {
+        tickerTrack.style.animationDuration = "20s";
+        clearTimeout(tickerTrack._resetTimer);
+        tickerTrack._resetTimer = setTimeout(function() {
+          tickerTrack.style.animationDuration = "60s";
+        }, 600);
+      }
+    }, { passive: true });
+  }
+
+  document.querySelectorAll(".faq-item__q").forEach(function(button) {
+    button.addEventListener("click", function() {
+      var item = button.closest(".faq-item");
+      var group = item.parentElement;
+      group.querySelectorAll(".faq-item").forEach(function(other) {
+        if (other !== item) other.classList.remove("is-open");
+      });
+      item.classList.toggle("is-open");
+    });
+  });
+
+  function sanitize(str) {
+    var div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function sanitizeFormData(formData) {
+    var clean = new FormData();
+    formData.forEach(function(value, key) {
+      clean.append(key, typeof value === "string" ? sanitize(value.trim()) : value);
+    });
+    return clean;
+  }
+
+  document.querySelectorAll(".form").forEach(function(form) {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      var formType = form.dataset.form || "unknown";
+      var now = Date.now();
+      if (formTimestamps[formType] && now - formTimestamps[formType] < RATE_LIMIT_MS) {
+        var wait = Math.ceil((RATE_LIMIT_MS - (now - formTimestamps[formType])) / 1000);
+        alert("Please wait " + wait + " seconds before submitting again.");
+        return;
+      }
+      var honeypot = form.querySelector("input[name='botcheck']");
+      if (honeypot && honeypot.checked) return;
+      var emailField = form.querySelector("input[type='email']");
+      var replytoField = form.querySelector("input[name='replyto']");
+      if (emailField && replytoField) replytoField.value = emailField.value;
+
+      var button = form.querySelector(".form__submit");
+      var success = form.querySelector(".form__success");
+      var error = form.querySelector(".form__error");
+      var originalHTML = button.innerHTML;
+      button.innerHTML = "Sending\u2026";
+      button.disabled = true;
+      form.classList.add("form__loading");
+      if (success) success.classList.remove("is-visible");
+      if (error) error.classList.remove("is-visible");
+
+      fetch("https://api.web3forms.com/submit", { method: "POST", body: sanitizeFormData(new FormData(form)) })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        form.classList.remove("form__loading");
+        if (data.success) {
+          formTimestamps[formType] = Date.now();
+          if (success) success.classList.add("is-visible");
+          button.innerHTML = "Sent \u2713";
+          setTimeout(function() {
+            button.innerHTML = originalHTML;
+            button.disabled = false;
+            form.reset();
+            setTimeout(function() { if (success) success.classList.remove("is-visible"); }, 4000);
+          }, 2200);
+        } else { throw new Error(data.message || "Failed"); }
+      })
+      .catch(function() {
+        form.classList.remove("form__loading");
+        if (error) error.classList.add("is-visible");
+        button.innerHTML = originalHTML;
+        button.disabled = false;
+        setTimeout(function() { if (error) error.classList.remove("is-visible"); }, 5000);
+      });
+    });
+  });
+
+  if (window.matchMedia("(hover: hover)").matches) {
+    var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+    window.addEventListener("mousemove", function(e) {
+      mouseX = e.clientX; mouseY = e.clientY;
+      cursor.style.transform = "translate(" + mouseX + "px, " + mouseY + "px) translate(-50%, -50%)";
+    });
+    function animateCursorRing() {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      cursorRing.style.transform = "translate(" + ringX + "px, " + ringY + "px) translate(-50%, -50%)";
+      requestAnimationFrame(animateCursorRing);
+    }
+    animateCursorRing();
+    document.querySelectorAll("a, button, input, select, textarea").forEach(function(el) {
+      el.addEventListener("mouseenter", function() {
+        cursor.classList.add("is-hover"); cursorRing.classList.add("is-hover");
+        if (["INPUT", "TEXTAREA", "SELECT"].indexOf(el.tagName) > -1) {
+          cursor.classList.add("is-text"); cursorRing.classList.add("is-text");
+        }
+      });
+      el.addEventListener("mouseleave", function() {
+        cursor.classList.remove("is-hover", "is-text"); cursorRing.classList.remove("is-hover", "is-text");
+      });
+    });
+    document.addEventListener("mouseleave", function() { cursor.classList.add("is-hidden"); cursorRing.classList.add("is-hidden"); });
+    document.addEventListener("mouseenter", function() { cursor.classList.remove("is-hidden"); cursorRing.classList.remove("is-hidden"); });
+  }
+})();
+
+</script>
+</body>
+</html>

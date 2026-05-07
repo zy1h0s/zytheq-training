@@ -1,77 +1,62 @@
-/*
- * Modal Component
- * Dialog overlay with close handling
- */
+"use client";
 
-'use client';
-
-import { cn } from '@/lib/utils';
-import { ReactNode, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
-  children: ReactNode;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  description?: string;
+  children: React.ReactNode;
 }
 
-export function Modal({ isOpen, onClose, title, children, size = 'md' }: ModalProps) {
-  // Close on escape key
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
+export function Modal({ isOpen, onClose, title, description, children }: ModalProps) {
+  const [isMounted, setIsMounted] = useState(false);
 
+  useEffect(() => {
+    setIsMounted(true);
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
-  if (!isOpen) return null;
-
-  const sizes = {
-    sm: 'max-w-md',
-    md: 'max-w-lg',
-    lg: 'max-w-2xl',
-    xl: 'max-w-4xl',
-  };
+  if (!isMounted || !isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+      <div 
+        className="fixed inset-0 bg-ink/30 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       />
-
-      {/* Modal */}
-      <div
-        className={cn(
-          'relative w-full mx-4 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl',
-          sizes[size]
-        )}
-      >
-        {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-700">
-          <h2 className="text-lg font-semibold text-white">{title}</h2>
+      
+      {/* Modal Dialog */}
+      <div className="relative z-50 w-full max-w-lg p-8 bg-paper border border-ink shadow-2xl animate-in fade-in zoom-in-95 duration-300">
+        <div className="flex items-start justify-between mb-6">
+          <div>
+            <h2 className="font-serif text-[32px] leading-[1.1] text-ink font-light tracking-[-0.02em]">{title}</h2>
+            {description && (
+              <p className="mt-2 text-[15px] text-ink-mute">{description}</p>
+            )}
+          </div>
           <button
             onClick={onClose}
-            className="p-1 text-slate-400 hover:text-white transition-colors"
+            className="p-2 text-ink-mute hover:text-ochre hover:bg-paper-warm transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
-
-        {/* Content */}
-        <div className="p-6 max-h-[70vh] overflow-y-auto">{children}</div>
+        
+        <div className="mt-4">
+          {children}
+        </div>
       </div>
     </div>
   );

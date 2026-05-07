@@ -19,6 +19,30 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // --- DUMMY LOGIN INJECTED FOR DEVELOPMENT ---
+    if (username === 'admin' && password === 'admin') {
+      const dummyUser = {
+        id: 'dummy-admin-id',
+        username: 'admin',
+        role: 'trainer',
+        full_name: 'Dummy Admin',
+        created_by: null,
+        is_active: true,
+        created_at: new Date().toISOString(),
+      };
+      
+      const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
+      const sessionId = await createSession(dummyUser.id, ip);
+      await setSessionCookie(sessionId, dummyUser.id);
+      
+      return NextResponse.json({
+        success: true,
+        user: dummyUser,
+        redirect: getDashboardPath(dummyUser.role),
+      });
+    }
+    // --------------------------------------------
+
     const supabase = createServerClient();
 
     // Find user by username
