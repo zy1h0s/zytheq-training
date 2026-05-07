@@ -105,7 +105,7 @@ export async function PATCH(request: NextRequest) {
       .eq('id', id)
       .single();
 
-    if (!section || (section.course as { created_by: string })?.created_by !== user.id) {
+    if (!section || (section.course as unknown as { created_by: string })?.created_by !== user.id) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
@@ -159,7 +159,7 @@ export async function DELETE(request: NextRequest) {
       .eq('id', id)
       .single();
 
-    if (!section || (section.course as { created_by: string })?.created_by !== user.id) {
+    if (!section || (section.course as unknown as { created_by: string })?.created_by !== user.id) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 

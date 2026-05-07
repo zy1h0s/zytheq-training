@@ -17,16 +17,47 @@ const Card = React.forwardRef<
 ))
 Card.displayName = "Card"
 
-const CardHeader = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
-    {...props}
-  />
-))
+interface CardHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
+  title?: React.ReactNode
+  description?: React.ReactNode
+  action?: React.ReactNode
+}
+
+const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
+  ({ className, title, description, action, children, ...props }, ref) => {
+    if (title || description || action) {
+      return (
+        <div
+          ref={ref}
+          className={cn("flex items-start justify-between gap-4 p-6", className)}
+          {...props}
+        >
+          <div className="flex flex-col space-y-1.5 min-w-0">
+            {title && (
+              <h3 className="font-serif font-medium text-[22px] leading-[1.2] tracking-[-0.01em]">
+                {title}
+              </h3>
+            )}
+            {description && (
+              <p className="text-[14px] leading-[1.6] text-ink-mute">{description}</p>
+            )}
+            {children}
+          </div>
+          {action && <div className="shrink-0">{action}</div>}
+        </div>
+      )
+    }
+    return (
+      <div
+        ref={ref}
+        className={cn("flex flex-col space-y-1.5 p-6", className)}
+        {...props}
+      >
+        {children}
+      </div>
+    )
+  }
+)
 CardHeader.displayName = "CardHeader"
 
 const CardTitle = React.forwardRef<

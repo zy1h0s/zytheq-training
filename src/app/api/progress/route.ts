@@ -226,7 +226,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const course = (lecture.section as { course: { id: string; index_id: string } })?.course;
+    const course = (lecture.section as unknown as { course: { id: string; index_id: string } })?.course;
     if (!course) {
       return NextResponse.json(
         { success: false, error: 'Lecture not linked to a course' },

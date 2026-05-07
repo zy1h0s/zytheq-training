@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
       .eq('id', lectureId)
       .single();
 
-    const createdBy = (lecture?.section as { course: { created_by: string } })?.course?.created_by;
+    const createdBy = (lecture?.section as unknown as { course: { created_by: string } })?.course?.created_by;
     if (!lecture || createdBy !== user.id) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }

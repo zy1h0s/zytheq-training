@@ -12,11 +12,13 @@ import {
   ClipboardList,
   ChevronDown,
   LogOut,
-  GraduationCap
+  GraduationCap,
+  UserCog,
+  Repeat
 } from 'lucide-react';
 
 interface SidebarProps {
-  role: 'trainer' | 'crm' | 'candidate' | 'other';
+  role: 'admin' | 'trainer' | 'crm' | 'candidate' | 'other';
   userName?: string;
   onLogout?: () => void;
 }
@@ -27,6 +29,13 @@ export function Sidebar({ role, userName = 'User', onLogout }: SidebarProps) {
 
   const getNavItems = () => {
     switch (role) {
+      case 'admin':
+        return [
+          { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+          { label: 'Trainers', href: '/admin/trainers', icon: GraduationCap },
+          { label: 'CRM Users', href: '/admin/crm', icon: UserCog },
+          { label: 'Reassign', href: '/admin/reassign', icon: Repeat },
+        ];
       case 'trainer':
         return [
           { label: 'Dashboard', href: '/trainer', icon: LayoutDashboard },
@@ -78,7 +87,7 @@ export function Sidebar({ role, userName = 'User', onLogout }: SidebarProps) {
   };
 
   const isActive = (href: string) => {
-    if (href === `/${role}` || href === '/learn') {
+    if (href === `/${role}` || href === '/learn' || href === '/admin') {
       return pathname === href;
     }
     return pathname.startsWith(href);

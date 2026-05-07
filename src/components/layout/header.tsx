@@ -4,18 +4,30 @@ import { Bell, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-export function Header() {
+interface HeaderProps {
+  title?: string;
+  showSearch?: boolean;
+  onSearch?: (value: string) => void;
+}
+
+export function Header({ title, showSearch = true, onSearch }: HeaderProps = {}) {
   return (
     <header className="sticky top-0 z-40 flex h-20 w-full items-center justify-between border-b border-rule bg-paper/95 px-8 backdrop-blur-md">
       <div className="flex flex-1 items-center gap-6">
-        <div className="relative w-full max-w-md">
-          <Search className="absolute left-0 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-faint" />
-          <Input
-            type="search"
-            placeholder="Search candidates, courses..."
-            className="pl-8 border-transparent focus-visible:border-rule"
-          />
-        </div>
+        {title && (
+          <h1 className="text-[18px] font-medium text-ink tracking-tight">{title}</h1>
+        )}
+        {showSearch && (
+          <div className="relative w-full max-w-md">
+            <Search className="absolute left-0 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-faint" />
+            <Input
+              type="search"
+              placeholder="Search candidates, courses..."
+              onChange={(e) => onSearch?.(e.target.value)}
+              className="pl-8 border-transparent focus-visible:border-rule"
+            />
+          </div>
+        )}
       </div>
 
       <div className="flex items-center gap-6">

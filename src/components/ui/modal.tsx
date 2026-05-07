@@ -2,16 +2,28 @@
 
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+type ModalSize = "sm" | "md" | "lg" | "xl" | "2xl";
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
   description?: string;
+  size?: ModalSize;
   children: React.ReactNode;
 }
 
-export function Modal({ isOpen, onClose, title, description, children }: ModalProps) {
+const sizeClasses: Record<ModalSize, string> = {
+  sm: "max-w-sm",
+  md: "max-w-md",
+  lg: "max-w-lg",
+  xl: "max-w-xl",
+  "2xl": "max-w-2xl",
+};
+
+export function Modal({ isOpen, onClose, title, description, size = "lg", children }: ModalProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -38,7 +50,7 @@ export function Modal({ isOpen, onClose, title, description, children }: ModalPr
       />
       
       {/* Modal Dialog */}
-      <div className="relative z-50 w-full max-w-lg p-8 bg-paper border border-ink shadow-2xl animate-in fade-in zoom-in-95 duration-300">
+      <div className={cn("relative z-50 w-full p-8 bg-paper border border-ink shadow-2xl animate-in fade-in zoom-in-95 duration-300", sizeClasses[size])}>
         <div className="flex items-start justify-between mb-6">
           <div>
             <h2 className="font-serif text-[32px] leading-[1.1] text-ink font-light tracking-[-0.02em]">{title}</h2>

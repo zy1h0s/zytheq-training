@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const course = (file.lecture as { section: { course: { id: string; index_id: string; created_by: string; is_active: boolean } } })?.section?.course;
+    const course = (file.lecture as unknown as { section: { course: { id: string; index_id: string; created_by: string; is_active: boolean } } })?.section?.course;
     if (!course) {
       return NextResponse.json(
         { success: false, error: 'File not linked to a course' },

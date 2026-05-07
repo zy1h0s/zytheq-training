@@ -3,22 +3,45 @@
  * Server and client instances for database operations
  */
 
-import { createClient } from '@supabase/supabase-js';
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 // Environment variables - set these in Vercel dashboard
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const PLACEHOLDER_URL = 'https://placeholder.supabase.co';
+const PLACEHOLDER_KEY = 'placeholder-key';
 
-// Client-side Supabase instance
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+function getEnv(name: string, fallback: string): string {
+  return process.env[name] || fallback;
+}
+
+// Lazy client-side Supabase instance — initialized on first access so module
+// import doesn't crash when env vars aren't present (e.g. during build).
+let _supabase: SupabaseClient | null = null;
+function getClient(): SupabaseClient {
+  if (!_supabase) {
+    _supabase = createClient(
+      getEnv('NEXT_PUBLIC_SUPABASE_URL', PLACEHOLDER_URL),
+      getEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY', PLACEHOLDER_KEY),
+    );
+  }
+  return _supabase;
+}
+
+export const supabase: SupabaseClient = new Proxy({} as SupabaseClient, {
+  get(_target, prop) {
+    return Reflect.get(getClient(), prop, getClient());
+  },
+});
 
 // Server-side helper - creates client with service role for admin operations
-export function createServerClient() {
-  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-  return createClient(supabaseUrl, supabaseServiceKey, {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-  });
+export function createServerClient(): SupabaseClient {
+  return createClient(
+    getEnv('NEXT_PUBLIC_SUPABASE_URL', PLACEHOLDER_URL),
+    getEnv('SUPABASE_SERVICE_ROLE_KEY', PLACEHOLDER_KEY),
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    }
+  );
 }

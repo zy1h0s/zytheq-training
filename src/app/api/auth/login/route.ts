@@ -6,6 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { verifyPassword, createSession, setSessionCookie, logActivity, getDashboardPath } from '@/lib/auth';
+import type { UserRole } from '@/types';
 
 export async function POST(request: NextRequest) {
   try {
@@ -38,7 +39,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         success: true,
         user: dummyUser,
-        redirect: getDashboardPath(dummyUser.role),
+        redirect: getDashboardPath(dummyUser.role as UserRole),
       });
     }
     // --------------------------------------------

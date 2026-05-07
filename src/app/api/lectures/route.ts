@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
       .eq('id', section_id)
       .single();
 
-    if (!section || (section.course as { created_by: string })?.created_by !== user.id) {
+    if (!section || (section.course as unknown as { created_by: string })?.created_by !== user.id) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
@@ -108,7 +108,7 @@ export async function PATCH(request: NextRequest) {
       .eq('id', id)
       .single();
 
-    const createdBy = (lecture?.section as { course: { created_by: string } })?.course?.created_by;
+    const createdBy = (lecture?.section as unknown as { course: { created_by: string } })?.course?.created_by;
     if (!lecture || createdBy !== user.id) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
@@ -166,7 +166,7 @@ export async function DELETE(request: NextRequest) {
       .eq('id', id)
       .single();
 
-    const createdBy = (lecture?.section as { course: { created_by: string } })?.course?.created_by;
+    const createdBy = (lecture?.section as unknown as { course: { created_by: string } })?.course?.created_by;
     if (!lecture || createdBy !== user.id) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
