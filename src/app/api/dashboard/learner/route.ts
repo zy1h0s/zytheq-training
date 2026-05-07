@@ -6,6 +6,7 @@
 import { NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getCurrentUser } from '@/lib/auth';
+import { getYouTubeThumbnailUrl } from '@/lib/utils';
 
 export async function GET() {
   try {
@@ -64,7 +65,8 @@ export async function GET() {
         index:indexes(id, name),
         sections(
           id,
-          lectures(id, duration_seconds)
+          order_index,
+          lectures(id, order_index, duration_seconds, youtube_url)
         )
       `)
       .in('id', allCourseIds)
@@ -80,17 +82,41 @@ export async function GET() {
 
     // Calculate course-level stats
     const coursesWithProgress = (courses || []).map((course) => {
-      const sections = course.sections as { id: string; lectures: { id: string; duration_seconds: number }[] }[];
+      const sections = course.sections as {
+        id: string;
+        order_index?: number;
+        lectures: {
+          id: string;
+          order_index?: number;
+          duration_seconds: number;
+          youtube_url?: string | null;
+        }[];
+      }[];
+      const sortedSections = [...sections].sort(
+        (a, b) => (a.order_index ?? 0) - (b.order_index ?? 0)
+      );
       const allLectures = sections.flatMap((s) => s.lectures);
       const totalLectures = allLectures.length;
       const completedLectures = allLectures.filter((l) => progressMap.get(l.id)?.is_completed).length;
       const totalDuration = allLectures.reduce((sum, l) => sum + (l.duration_seconds || 0), 0);
 
+      // Fall back to first lecture's YouTube thumbnail when no thumbnail_url.
+      const firstYouTubeUrl = sortedSections
+        .flatMap((s) =>
+          [...s.lectures].sort(
+            (a, b) => (a.order_index ?? 0) - (b.order_index ?? 0)
+          )
+        )
+        .find((l) => l.youtube_url)?.youtube_url;
+      const derivedThumb = firstYouTubeUrl
+        ? getYouTubeThumbnailUrl(firstYouTubeUrl)
+        : null;
+
       return {
         id: course.id,
         title: course.title,
         description: course.description,
-        thumbnail_url: course.thumbnail_url,
+        thumbnail_url: course.thumbnail_url || derivedThumb,
         index_name: (course.index as { name: string })?.name,
         section_count: sections.length,
         lecture_count: totalLectures,

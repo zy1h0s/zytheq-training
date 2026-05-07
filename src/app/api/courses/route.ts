@@ -6,6 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getCurrentUser, logActivity } from '@/lib/auth';
+import { getYouTubeThumbnailUrl } from '@/lib/utils';
 
 // GET - List courses for current user
 export async function GET(request: NextRequest) {
@@ -27,7 +28,8 @@ export async function GET(request: NextRequest) {
         index:indexes!inner(id, name),
         sections(
           id,
-          lectures(id)
+          order_index,
+          lectures(id, order_index, youtube_url)
         )
       `)
       .eq('created_by', user.id)
@@ -45,12 +47,31 @@ export async function GET(request: NextRequest) {
 
     if (error) throw error;
 
-    // Format with counts
+    // Format with counts; derive a YouTube thumbnail from the first lecture
+    // when the course has no explicit thumbnail_url so cards never show empty.
     const courses = data.map((course: Record<string, unknown>) => {
-      const sections = course.sections as { id: string; lectures: { id: string }[] }[];
+      const sections = course.sections as {
+        id: string;
+        order_index?: number;
+        lectures: { id: string; order_index?: number; youtube_url?: string | null }[];
+      }[];
+      const sortedSections = [...sections].sort(
+        (a, b) => (a.order_index ?? 0) - (b.order_index ?? 0)
+      );
       const lectureCount = sections.reduce((acc, s) => acc + s.lectures.length, 0);
+      const firstYouTubeUrl = sortedSections
+        .flatMap((s) =>
+          [...s.lectures].sort(
+            (a, b) => (a.order_index ?? 0) - (b.order_index ?? 0)
+          )
+        )
+        .find((l) => l.youtube_url)?.youtube_url;
+      const derivedThumb = firstYouTubeUrl
+        ? getYouTubeThumbnailUrl(firstYouTubeUrl)
+        : null;
       return {
         ...course,
+        thumbnail_url: course.thumbnail_url || derivedThumb,
         index_name: (course.index as { name: string })?.name,
         section_count: sections.length,
         lecture_count: lectureCount,

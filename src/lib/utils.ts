@@ -82,9 +82,18 @@ export function getYouTubeEmbedUrl(url: string): string | null {
   return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
 }
 
-// Normalize a thumbnail URL — converts Google Drive sharing URLs into
-// direct image URLs that can be loaded in <img> tags. Returns the input
-// unchanged if it isn't a recognized Drive link.
+// Build a YouTube thumbnail URL for a given video URL or id.
+// Uses hqdefault (always exists, 480x360) for reliability across all videos;
+// switch to maxresdefault if you only have HD-uploaded content.
+export function getYouTubeThumbnailUrl(url: string): string | null {
+  const videoId = extractYouTubeId(url);
+  if (!videoId) return null;
+  return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+}
+
+// Normalize a thumbnail URL — converts Google Drive sharing URLs and YouTube
+// URLs into direct image URLs that can be loaded in <img> tags. Returns the
+// input unchanged if it isn't a recognized Drive or YouTube link.
 export function normalizeThumbnailUrl(
   url: string | null | undefined
 ): string | null {
@@ -92,18 +101,21 @@ export function normalizeThumbnailUrl(
   const trimmed = url.trim();
   if (!trimmed) return null;
 
-  // Match common Drive URL formats:
-  //  https://drive.google.com/file/d/FILE_ID/view?...
-  //  https://drive.google.com/open?id=FILE_ID
-  //  https://drive.google.com/uc?id=FILE_ID
-  //  https://docs.google.com/uc?id=FILE_ID
+  // Drive: file/d/ID, ?id=ID, /open?id=ID, /uc?id=ID
   const filePathMatch = trimmed.match(/drive\.google\.com\/file\/d\/([^/?#]+)/i);
-  const queryIdMatch = trimmed.match(/[?&]id=([^&#]+)/);
-  const fileId = filePathMatch?.[1] || queryIdMatch?.[1];
-
+  const driveQueryIdMatch =
+    /drive\.google\.com|docs\.google\.com/i.test(trimmed)
+      ? trimmed.match(/[?&]id=([^&#]+)/)
+      : null;
+  const fileId = filePathMatch?.[1] || driveQueryIdMatch?.[1];
   if (fileId) {
-    // `thumbnail` endpoint serves a public image and works with hotlinking.
     return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
+  }
+
+  // YouTube: any youtube.com / youtu.be URL → derived thumbnail
+  if (/youtube\.com|youtu\.be/i.test(trimmed)) {
+    const ytThumb = getYouTubeThumbnailUrl(trimmed);
+    if (ytThumb) return ytThumb;
   }
 
   return trimmed;
