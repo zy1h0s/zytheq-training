@@ -168,7 +168,7 @@ export default function LearnDashboardPage() {
                           {/* Completion badge */}
                           {course.completion_percentage === 100 && (
                             <div className="absolute top-2 right-2">
-                              <div className="bg-green-600 rounded-full p-1">
+                              <div className="bg-moss rounded-full p-1">
                                 <Trophy className="w-4 h-4 text-ink" />
                               </div>
                             </div>

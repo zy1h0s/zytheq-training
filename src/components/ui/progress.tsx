@@ -28,7 +28,7 @@ export function Progress({
 
   // Color based on progress
   const getColor = () => {
-    if (clampedValue >= 100) return 'bg-green-500';
+    if (clampedValue >= 100) return 'bg-moss';
     if (clampedValue >= 75) return 'bg-ochre';
     if (clampedValue >= 50) return 'bg-yellow-500';
     return 'bg-ochre';

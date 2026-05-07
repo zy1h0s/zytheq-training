@@ -205,7 +205,7 @@ export default function TrainersPage() {
                           title={trainer.is_active ? 'Deactivate' : 'Activate'}
                         >
                           {trainer.is_active ? (
-                            <ToggleRight className="w-5 h-5 text-green-400" />
+                            <ToggleRight className="w-5 h-5 text-moss" />
                           ) : (
                             <ToggleLeft className="w-5 h-5 text-ink-mute" />
                           )}

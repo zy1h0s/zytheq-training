@@ -252,7 +252,7 @@ export default function OthersPage() {
                           title={other.is_active ? 'Deactivate' : 'Activate'}
                         >
                           {other.is_active ? (
-                            <ToggleRight className="w-5 h-5 text-green-400" />
+                            <ToggleRight className="w-5 h-5 text-moss" />
                           ) : (
                             <ToggleLeft className="w-5 h-5 text-ink-mute" />
                           )}
@@ -336,7 +336,7 @@ export default function OthersPage() {
                 <div
                   key={i}
                   className={`text-sm px-3 py-2 rounded ${
-                    result.success ? 'bg-green-900/30 text-green-400' : 'bg-crimson/10 text-crimson'
+                    result.success ? 'bg-moss/10 text-moss' : 'bg-crimson/10 text-crimson'
                   }`}
                 >
                   {result.username}: {result.success ? 'Created' : result.error}

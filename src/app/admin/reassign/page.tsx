@@ -184,7 +184,7 @@ export default function ReassignPage() {
             {message && (
               <div className={`mb-4 px-4 py-3 rounded-lg text-sm ${
                 message.includes('Success')
-                  ? 'bg-green-900/30 border border-green-800 text-green-400'
+                  ? 'bg-moss/10 border border-moss/30 text-moss'
                   : 'bg-crimson/10 border border-crimson/30 text-crimson'
               }`}>
                 {message}

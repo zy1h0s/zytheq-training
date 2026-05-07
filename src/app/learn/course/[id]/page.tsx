@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { Card, CardContent } from '@/components/ui/card';
@@ -73,6 +73,7 @@ export default function CourseViewerPage() {
   const [expandedSections, setExpandedSections] = useState<string[]>([]);
   const [currentLecture, setCurrentLecture] = useState<Lecture | null>(null);
   const [watchTime, setWatchTime] = useState(0);
+  const watchTimeRef = useRef(0);
 
   const fetchCourse = useCallback(async () => {
     try {
@@ -116,25 +117,30 @@ export default function CourseViewerPage() {
     }
   }, [id, fetchCourse]);
 
+  // Track time spent + save once when leaving the lecture (or on unmount).
+  // Single effect keyed on currentLecture so cleanup fires only on lecture
+  // change, not on every tick (which previously caused quadratic time inflation).
   useEffect(() => {
-    // Track time spent on current lecture
     if (!currentLecture) return;
 
+    const lectureId = currentLecture.id;
+    watchTimeRef.current = 0;
+    setWatchTime(0);
+
     const interval = setInterval(() => {
-      setWatchTime((prev) => prev + 1);
+      watchTimeRef.current += 1;
+      setWatchTime(watchTimeRef.current);
     }, 1000);
 
-    return () => clearInterval(interval);
-  }, [currentLecture]);
-
-  // Save progress when leaving lecture
-  useEffect(() => {
     return () => {
-      if (currentLecture && watchTime > 0) {
-        saveProgress(currentLecture.id, watchTime, false);
+      clearInterval(interval);
+      const elapsed = watchTimeRef.current;
+      if (elapsed > 0) {
+        saveProgress(lectureId, elapsed, false);
       }
     };
-  }, [currentLecture, watchTime]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentLecture?.id]);
 
   useEffect(() => {
     if (!currentLecture || currentLecture.duration_seconds <= 0) return;
@@ -142,7 +148,9 @@ export default function CourseViewerPage() {
 
     const threshold = Math.floor(currentLecture.duration_seconds * 0.9);
     if (watchTime >= threshold) {
-      saveProgress(currentLecture.id, watchTime, true);
+      const elapsed = watchTimeRef.current;
+      saveProgress(currentLecture.id, elapsed, true);
+      watchTimeRef.current = 0;
       setWatchTime(0);
     }
   }, [currentLecture, watchTime, progress]);
@@ -449,7 +457,7 @@ export default function CourseViewerPage() {
                                 }`}
                               >
                                 {isCompleted ? (
-                                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                                  <CheckCircle className="w-4 h-4 text-moss flex-shrink-0" />
                                 ) : (
                                   <PlayCircle className="w-4 h-4 text-ink-faint flex-shrink-0" />
                                 )}
