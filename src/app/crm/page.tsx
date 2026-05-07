@@ -67,10 +67,10 @@ export default function CRMDashboardPage() {
   if (loading) {
     return (
       <div className="p-6">
-        <div className="h-8 w-48 bg-slate-800 rounded skeleton mb-6" />
+        <div className="h-8 w-48 bg-paper-dim rounded skeleton mb-6" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {[...Array(5)].map((_, i) => (
-            <div key={i} className="h-32 bg-slate-800 rounded-xl skeleton" />
+            <div key={i} className="h-32 bg-paper-dim rounded-xl skeleton" />
           ))}
         </div>
       </div>
@@ -111,15 +111,15 @@ export default function CRMDashboardPage() {
                       <div className="flex items-center gap-3">
                         <Avatar name={other.full_name} size="sm" />
                         <div>
-                          <p className="font-medium text-white">{other.full_name}</p>
-                          <p className="text-xs text-slate-500">@{other.username}</p>
+                          <p className="font-medium text-ink">{other.full_name}</p>
+                          <p className="text-xs text-ink-faint">@{other.username}</p>
                         </div>
                       </div>
                     </TableCell>
                     <TableCell>{other.total_courses_assigned}</TableCell>
                     <TableCell>{other.lectures_completed}</TableCell>
                     <TableCell>{formatDuration(other.total_time_spent)}</TableCell>
-                    <TableCell className="text-slate-400">
+                    <TableCell className="text-ink-mute">
                       {other.last_active ? getRelativeTime(other.last_active) : 'Never'}
                     </TableCell>
                     <TableCell>
@@ -131,7 +131,7 @@ export default function CRMDashboardPage() {
                 ))}
                 {(!data?.others || data.others.length === 0) && (
                   <TableRow>
-                    <TableCell colSpan={6} className="text-center text-slate-500 py-8">
+                    <TableCell colSpan={6} className="text-center text-ink-faint py-8">
                       No staff users yet. Create staff users to get started.
                     </TableCell>
                   </TableRow>

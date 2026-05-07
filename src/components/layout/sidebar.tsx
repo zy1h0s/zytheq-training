@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import {
   LayoutDashboard,
@@ -25,7 +25,22 @@ interface SidebarProps {
 
 export function Sidebar({ role, userName = 'User', onLogout }: SidebarProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+
+  const handleLogout = async () => {
+    if (onLogout) {
+      onLogout();
+      return;
+    }
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' });
+    } catch (err) {
+      console.error('Logout request failed:', err);
+    }
+    router.push('/login');
+    router.refresh();
+  };
 
   const getNavItems = () => {
     switch (role) {
@@ -186,7 +201,7 @@ export function Sidebar({ role, userName = 'User', onLogout }: SidebarProps) {
           </div>
         </div>
         <button
-          onClick={onLogout}
+          onClick={handleLogout}
           className="w-full flex items-center gap-3 px-3 py-2 text-[14.5px] font-medium text-ink-mute hover:bg-paper-warm hover:text-crimson transition-colors"
         >
           <LogOut className="w-4 h-4" />

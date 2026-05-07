@@ -211,7 +211,7 @@ export default function CandidatesPage() {
             {loading ? (
               <div className="space-y-2">
                 {[...Array(5)].map((_, i) => (
-                  <div key={i} className="h-16 bg-slate-800 rounded skeleton" />
+                  <div key={i} className="h-16 bg-paper-dim rounded skeleton" />
                 ))}
               </div>
             ) : filteredCandidates.length === 0 ? (
@@ -238,11 +238,11 @@ export default function CandidatesPage() {
                       <TableCell>
                         <div className="flex items-center gap-3">
                           <Avatar name={candidate.full_name} size="sm" />
-                          <span className="font-medium text-white">{candidate.full_name}</span>
+                          <span className="font-medium text-ink">{candidate.full_name}</span>
                         </div>
                       </TableCell>
-                      <TableCell className="text-slate-400">@{candidate.username}</TableCell>
-                      <TableCell className="text-slate-400">{formatDate(candidate.created_at)}</TableCell>
+                      <TableCell className="text-ink-mute">@{candidate.username}</TableCell>
+                      <TableCell className="text-ink-mute">{formatDate(candidate.created_at)}</TableCell>
                       <TableCell>
                         <Badge variant={candidate.is_active ? 'success' : 'danger'}>
                           {candidate.is_active ? 'Active' : 'Inactive'}
@@ -251,13 +251,13 @@ export default function CandidatesPage() {
                       <TableCell>
                         <button
                           onClick={() => toggleActive(candidate)}
-                          className="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                          className="p-2 hover:bg-paper-warm rounded-lg transition-colors"
                           title={candidate.is_active ? 'Deactivate' : 'Activate'}
                         >
                           {candidate.is_active ? (
                             <ToggleRight className="w-5 h-5 text-green-400" />
                           ) : (
-                            <ToggleLeft className="w-5 h-5 text-slate-400" />
+                            <ToggleLeft className="w-5 h-5 text-ink-mute" />
                           )}
                         </button>
                       </TableCell>
@@ -300,14 +300,14 @@ export default function CandidatesPage() {
             <button
               type="button"
               onClick={() => setPassword(generatePassword(8))}
-              className="text-sm text-blue-400 hover:text-blue-300 mt-1"
+              className="text-sm text-ochre hover:text-ochre mt-1"
             >
               Generate new password
             </button>
           </div>
 
           {error && (
-            <div className="bg-red-900/30 border border-red-800 text-red-400 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-crimson/10 border border-crimson/30 text-crimson px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}
@@ -326,8 +326,8 @@ export default function CandidatesPage() {
       {/* Bulk Import Modal */}
       <Modal isOpen={showBulkModal} onClose={() => setShowBulkModal(false)} title="Bulk Import Candidates" size="lg">
         <div className="space-y-4">
-          <p className="text-sm text-slate-400">
-            Paste CSV data with format: <code className="text-blue-400">username,password,full_name</code>
+          <p className="text-sm text-ink-mute">
+            Paste CSV data with format: <code className="text-ochre">username,password,full_name</code>
           </p>
           <Textarea
             id="csvData"
@@ -346,7 +346,7 @@ export default function CandidatesPage() {
                   className={`text-sm px-3 py-2 rounded ${
                     result.success
                       ? 'bg-green-900/30 text-green-400'
-                      : 'bg-red-900/30 text-red-400'
+                      : 'bg-crimson/10 text-crimson'
                   }`}
                 >
                   {result.username}: {result.success ? 'Created' : result.error}
@@ -356,7 +356,7 @@ export default function CandidatesPage() {
           )}
 
           {error && (
-            <div className="bg-red-900/30 border border-red-800 text-red-400 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-crimson/10 border border-crimson/30 text-crimson px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}

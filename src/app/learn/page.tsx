@@ -73,10 +73,10 @@ export default function LearnDashboardPage() {
   if (loading) {
     return (
       <div className="p-6">
-        <div className="h-8 w-48 bg-slate-800 rounded skeleton mb-6" />
+        <div className="h-8 w-48 bg-paper-dim rounded skeleton mb-6" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="h-32 bg-slate-800 rounded-xl skeleton" />
+            <div key={i} className="h-32 bg-paper-dim rounded-xl skeleton" />
           ))}
         </div>
       </div>
@@ -149,7 +149,7 @@ export default function LearnDashboardPage() {
                       href={`/learn/course/${course.id}`}
                       className="block"
                     >
-                      <div className="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-600/50 transition-colors group">
+                      <div className="bg-paper-dim/50 border border-rule rounded-xl overflow-hidden hover:border-blue-600/50 transition-colors group">
                         {/* Thumbnail */}
                         <div className="relative h-32 bg-gradient-to-br from-blue-900/50 to-slate-800 flex items-center justify-center">
                           {course.thumbnail_url ? (
@@ -162,14 +162,14 @@ export default function LearnDashboardPage() {
                               unoptimized
                             />
                           ) : (
-                            <BookOpen className="w-12 h-12 text-slate-600 group-hover:text-blue-400 transition-colors" />
+                            <BookOpen className="w-12 h-12 text-ink-faint group-hover:text-ochre transition-colors" />
                           )}
 
                           {/* Completion badge */}
                           {course.completion_percentage === 100 && (
                             <div className="absolute top-2 right-2">
                               <div className="bg-green-600 rounded-full p-1">
-                                <Trophy className="w-4 h-4 text-white" />
+                                <Trophy className="w-4 h-4 text-ink" />
                               </div>
                             </div>
                           )}
@@ -181,17 +181,17 @@ export default function LearnDashboardPage() {
                             {course.index_name}
                           </Badge>
 
-                          <h3 className="font-semibold text-white mb-2 line-clamp-1 group-hover:text-blue-400 transition-colors">
+                          <h3 className="font-semibold text-ink mb-2 line-clamp-1 group-hover:text-ochre transition-colors">
                             {course.title}
                           </h3>
 
                           {/* Progress */}
                           <div className="mb-3">
                             <div className="flex items-center justify-between text-sm mb-1">
-                              <span className="text-slate-400">
+                              <span className="text-ink-mute">
                                 {course.completed_lectures} / {course.lecture_count} lectures
                               </span>
-                              <span className="text-blue-400">
+                              <span className="text-ochre">
                                 {course.completion_percentage}%
                               </span>
                             </div>
@@ -199,7 +199,7 @@ export default function LearnDashboardPage() {
                           </div>
 
                           {/* Meta */}
-                          <div className="flex items-center gap-4 text-sm text-slate-500">
+                          <div className="flex items-center gap-4 text-sm text-ink-faint">
                             <span className="flex items-center gap-1">
                               <PlayCircle className="w-4 h-4" />
                               {course.lecture_count}

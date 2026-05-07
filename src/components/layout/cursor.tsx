@@ -17,7 +17,7 @@ export default function Cursor() {
       mouseX = e.clientX;
       mouseY = e.clientY;
       
-      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
       
       const target = e.target as HTMLElement;
       if (
@@ -49,7 +49,7 @@ export default function Cursor() {
     const animateRing = () => {
       ringX += (mouseX - ringX) * 0.15;
       ringY += (mouseY - ringY) * 0.15;
-      ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
+      ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
       requestAnimationFrame(animateRing);
     };
 

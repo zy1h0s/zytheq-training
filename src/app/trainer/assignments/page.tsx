@@ -135,8 +135,8 @@ export default function AssignmentsPage() {
   if (loading) {
     return (
       <div className="p-6">
-        <div className="h-8 w-48 bg-slate-800 rounded skeleton mb-6" />
-        <div className="h-64 bg-slate-800 rounded-xl skeleton" />
+        <div className="h-8 w-48 bg-paper-dim rounded skeleton mb-6" />
+        <div className="h-64 bg-paper-dim rounded-xl skeleton" />
       </div>
     );
   }
@@ -185,7 +185,7 @@ export default function AssignmentsPage() {
               <div className={`mb-4 px-4 py-3 rounded-lg text-sm ${
                 message.includes('Assigned') || message.includes('Success')
                   ? 'bg-green-900/30 border border-green-800 text-green-400'
-                  : 'bg-red-900/30 border border-red-800 text-red-400'
+                  : 'bg-crimson/10 border border-crimson/30 text-crimson'
               }`}>
                 {message}
               </div>
@@ -246,10 +246,10 @@ export default function AssignmentsPage() {
                       <TableCell>
                         <div className="flex items-center gap-3">
                           <Avatar name={candidate.full_name} size="sm" />
-                          <span className="font-medium text-white">{candidate.full_name}</span>
+                          <span className="font-medium text-ink">{candidate.full_name}</span>
                         </div>
                       </TableCell>
-                      <TableCell className="text-slate-400">@{candidate.username}</TableCell>
+                      <TableCell className="text-ink-mute">@{candidate.username}</TableCell>
                       <TableCell>
                         <Badge variant="success">Active</Badge>
                       </TableCell>

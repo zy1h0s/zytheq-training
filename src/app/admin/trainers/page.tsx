@@ -161,7 +161,7 @@ export default function TrainersPage() {
             {loading ? (
               <div className="space-y-2">
                 {[...Array(5)].map((_, i) => (
-                  <div key={i} className="h-16 bg-slate-800 rounded skeleton" />
+                  <div key={i} className="h-16 bg-paper-dim rounded skeleton" />
                 ))}
               </div>
             ) : filteredTrainers.length === 0 ? (
@@ -188,11 +188,11 @@ export default function TrainersPage() {
                       <TableCell>
                         <div className="flex items-center gap-3">
                           <Avatar name={trainer.full_name} size="sm" />
-                          <span className="font-medium text-white">{trainer.full_name}</span>
+                          <span className="font-medium text-ink">{trainer.full_name}</span>
                         </div>
                       </TableCell>
-                      <TableCell className="text-slate-400">@{trainer.username}</TableCell>
-                      <TableCell className="text-slate-400">{formatDate(trainer.created_at)}</TableCell>
+                      <TableCell className="text-ink-mute">@{trainer.username}</TableCell>
+                      <TableCell className="text-ink-mute">{formatDate(trainer.created_at)}</TableCell>
                       <TableCell>
                         <Badge variant={trainer.is_active ? 'success' : 'danger'}>
                           {trainer.is_active ? 'Active' : 'Inactive'}
@@ -201,13 +201,13 @@ export default function TrainersPage() {
                       <TableCell>
                         <button
                           onClick={() => toggleActive(trainer)}
-                          className="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                          className="p-2 hover:bg-paper-warm rounded-lg transition-colors"
                           title={trainer.is_active ? 'Deactivate' : 'Activate'}
                         >
                           {trainer.is_active ? (
                             <ToggleRight className="w-5 h-5 text-green-400" />
                           ) : (
-                            <ToggleLeft className="w-5 h-5 text-slate-400" />
+                            <ToggleLeft className="w-5 h-5 text-ink-mute" />
                           )}
                         </button>
                       </TableCell>
@@ -254,14 +254,14 @@ export default function TrainersPage() {
             <button
               type="button"
               onClick={() => setPassword(generatePassword(8))}
-              className="text-sm text-blue-400 hover:text-blue-300 mt-1"
+              className="text-sm text-ochre hover:text-ochre mt-1"
             >
               Generate new password
             </button>
           </div>
 
           {error && (
-            <div className="bg-red-900/30 border border-red-800 text-red-400 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-crimson/10 border border-crimson/30 text-crimson px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}

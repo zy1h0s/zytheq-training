@@ -92,10 +92,10 @@ export default function AdminDashboardPage() {
   if (loading) {
     return (
       <div className="p-6">
-        <div className="h-8 w-48 bg-slate-800 rounded skeleton mb-6" />
+        <div className="h-8 w-48 bg-paper-dim rounded skeleton mb-6" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="h-32 bg-slate-800 rounded-xl skeleton" />
+            <div key={i} className="h-32 bg-paper-dim rounded-xl skeleton" />
           ))}
         </div>
       </div>
@@ -158,8 +158,8 @@ export default function AdminDashboardPage() {
                         <div className="flex items-center gap-3">
                           <Avatar name={trainer.full_name} size="sm" />
                           <div>
-                            <p className="font-medium text-white">{trainer.full_name}</p>
-                            <p className="text-xs text-slate-500">@{trainer.username}</p>
+                            <p className="font-medium text-ink">{trainer.full_name}</p>
+                            <p className="text-xs text-ink-faint">@{trainer.username}</p>
                           </div>
                         </div>
                       </TableCell>
@@ -174,7 +174,7 @@ export default function AdminDashboardPage() {
                   ))}
                   {(!data?.trainers || data.trainers.length === 0) && (
                     <TableRow>
-                      <TableCell colSpan={4} className="text-center text-slate-500 py-8">
+                      <TableCell colSpan={4} className="text-center text-ink-faint py-8">
                         No trainers yet
                       </TableCell>
                     </TableRow>
@@ -204,8 +204,8 @@ export default function AdminDashboardPage() {
                         <div className="flex items-center gap-3">
                           <Avatar name={crm.full_name} size="sm" />
                           <div>
-                            <p className="font-medium text-white">{crm.full_name}</p>
-                            <p className="text-xs text-slate-500">@{crm.username}</p>
+                            <p className="font-medium text-ink">{crm.full_name}</p>
+                            <p className="text-xs text-ink-faint">@{crm.username}</p>
                           </div>
                         </div>
                       </TableCell>
@@ -220,7 +220,7 @@ export default function AdminDashboardPage() {
                   ))}
                   {(!data?.crms || data.crms.length === 0) && (
                     <TableRow>
-                      <TableCell colSpan={4} className="text-center text-slate-500 py-8">
+                      <TableCell colSpan={4} className="text-center text-ink-faint py-8">
                         No CRM users yet
                       </TableCell>
                     </TableRow>
@@ -236,32 +236,32 @@ export default function AdminDashboardPage() {
           <CardHeader
             title="Recent Activity"
             description="Latest actions across the platform"
-            action={<Activity className="w-5 h-5 text-slate-400" />}
+            action={<Activity className="w-5 h-5 text-ink-mute" />}
           />
           <CardContent>
             <div className="space-y-4">
               {data?.recent_activities?.slice(0, 10).map((activity) => (
                 <div
                   key={activity.id}
-                  className="flex items-center gap-4 py-2 border-b border-slate-700/50 last:border-0"
+                  className="flex items-center gap-4 py-2 border-b border-rule/50 last:border-0"
                 >
-                  <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                  <div className="w-2 h-2 bg-ochre rounded-full" />
                   <div className="flex-1">
-                    <p className="text-sm text-white">
+                    <p className="text-sm text-ink">
                       <span className="font-medium">
                         {activity.user?.full_name || 'Unknown'}
                       </span>
                       {' '}
                       {formatAction(activity.action).toLowerCase()}
                     </p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-ink-faint">
                       {getRelativeTime(activity.created_at)}
                     </p>
                   </div>
                 </div>
               ))}
               {(!data?.recent_activities || data.recent_activities.length === 0) && (
-                <p className="text-center text-slate-500 py-4">No recent activity</p>
+                <p className="text-center text-ink-faint py-4">No recent activity</p>
               )}
             </div>
           </CardContent>

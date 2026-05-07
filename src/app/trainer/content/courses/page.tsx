@@ -209,7 +209,7 @@ export default function CoursesPage() {
             {loading ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} className="h-64 bg-slate-800 rounded-xl skeleton" />
+                  <div key={i} className="h-64 bg-paper-dim rounded-xl skeleton" />
                 ))}
               </div>
             ) : indexes.length === 0 ? (
@@ -234,7 +234,7 @@ export default function CoursesPage() {
                 {filteredCourses.map((course) => (
                   <div
                     key={course.id}
-                    className="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden hover:border-slate-600 transition-colors"
+                    className="bg-paper-dim/50 border border-rule rounded-xl overflow-hidden hover:border-rule transition-colors"
                   >
                     {/* Thumbnail */}
                     <div className="relative h-32 bg-gradient-to-br from-blue-900/50 to-slate-800 flex items-center justify-center">
@@ -248,7 +248,7 @@ export default function CoursesPage() {
                           unoptimized
                         />
                       ) : (
-                        <BookOpen className="w-12 h-12 text-slate-600" />
+                        <BookOpen className="w-12 h-12 text-ink-faint" />
                       )}
                     </div>
 
@@ -261,12 +261,12 @@ export default function CoursesPage() {
                         </Badge>
                       </div>
 
-                      <h3 className="font-semibold text-white mb-1 line-clamp-1">{course.title}</h3>
+                      <h3 className="font-semibold text-ink mb-1 line-clamp-1">{course.title}</h3>
                       {course.description && (
-                        <p className="text-sm text-slate-400 mb-3 line-clamp-2">{course.description}</p>
+                        <p className="text-sm text-ink-mute mb-3 line-clamp-2">{course.description}</p>
                       )}
 
-                      <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
+                      <div className="flex items-center gap-4 text-sm text-ink-faint mb-4">
                         <span className="flex items-center gap-1">
                           <Layers className="w-4 h-4" />
                           {course.section_count} sections
@@ -278,7 +278,7 @@ export default function CoursesPage() {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex gap-2 pt-3 border-t border-slate-700">
+                      <div className="flex gap-2 pt-3 border-t border-rule">
                         <Link
                           href={`/trainer/content/courses/${course.id}`}
                           className="flex-1"
@@ -290,17 +290,17 @@ export default function CoursesPage() {
                         </Link>
                         <button
                           onClick={() => openEditModal(course)}
-                          className="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                          className="p-2 hover:bg-paper-warm rounded-lg transition-colors"
                           title="Edit"
                         >
-                          <Edit className="w-4 h-4 text-slate-400" />
+                          <Edit className="w-4 h-4 text-ink-mute" />
                         </button>
                         <button
                           onClick={() => handleDelete(course)}
-                          className="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                          className="p-2 hover:bg-paper-warm rounded-lg transition-colors"
                           title="Delete"
                         >
-                          <Trash2 className="w-4 h-4 text-red-400" />
+                          <Trash2 className="w-4 h-4 text-crimson" />
                         </button>
                       </div>
                     </div>
@@ -352,7 +352,7 @@ export default function CoursesPage() {
           />
 
           {error && (
-            <div className="bg-red-900/30 border border-red-800 text-red-400 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-crimson/10 border border-crimson/30 text-crimson px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}

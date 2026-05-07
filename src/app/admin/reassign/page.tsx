@@ -147,7 +147,7 @@ export default function ReassignPage() {
               />
 
               <div className="flex items-center justify-center">
-                <ArrowRight className="w-6 h-6 text-slate-500" />
+                <ArrowRight className="w-6 h-6 text-ink-faint" />
               </div>
 
               <Select
@@ -185,7 +185,7 @@ export default function ReassignPage() {
               <div className={`mb-4 px-4 py-3 rounded-lg text-sm ${
                 message.includes('Success')
                   ? 'bg-green-900/30 border border-green-800 text-green-400'
-                  : 'bg-red-900/30 border border-red-800 text-red-400'
+                  : 'bg-crimson/10 border border-crimson/30 text-crimson'
               }`}>
                 {message}
               </div>
@@ -230,10 +230,10 @@ export default function ReassignPage() {
                       <TableCell>
                         <div className="flex items-center gap-3">
                           <Avatar name={candidate.full_name} size="sm" />
-                          <span className="font-medium text-white">{candidate.full_name}</span>
+                          <span className="font-medium text-ink">{candidate.full_name}</span>
                         </div>
                       </TableCell>
-                      <TableCell className="text-slate-400">@{candidate.username}</TableCell>
+                      <TableCell className="text-ink-mute">@{candidate.username}</TableCell>
                       <TableCell>
                         <Badge variant={candidate.is_active ? 'success' : 'danger'}>
                           {candidate.is_active ? 'Active' : 'Inactive'}

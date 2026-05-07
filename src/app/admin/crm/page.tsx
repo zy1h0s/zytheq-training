@@ -159,7 +159,7 @@ export default function CRMPage() {
             {loading ? (
               <div className="space-y-2">
                 {[...Array(5)].map((_, i) => (
-                  <div key={i} className="h-16 bg-slate-800 rounded skeleton" />
+                  <div key={i} className="h-16 bg-paper-dim rounded skeleton" />
                 ))}
               </div>
             ) : filteredCRMs.length === 0 ? (
@@ -186,11 +186,11 @@ export default function CRMPage() {
                       <TableCell>
                         <div className="flex items-center gap-3">
                           <Avatar name={crm.full_name} size="sm" />
-                          <span className="font-medium text-white">{crm.full_name}</span>
+                          <span className="font-medium text-ink">{crm.full_name}</span>
                         </div>
                       </TableCell>
-                      <TableCell className="text-slate-400">@{crm.username}</TableCell>
-                      <TableCell className="text-slate-400">{formatDate(crm.created_at)}</TableCell>
+                      <TableCell className="text-ink-mute">@{crm.username}</TableCell>
+                      <TableCell className="text-ink-mute">{formatDate(crm.created_at)}</TableCell>
                       <TableCell>
                         <Badge variant={crm.is_active ? 'success' : 'danger'}>
                           {crm.is_active ? 'Active' : 'Inactive'}
@@ -199,13 +199,13 @@ export default function CRMPage() {
                       <TableCell>
                         <button
                           onClick={() => toggleActive(crm)}
-                          className="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                          className="p-2 hover:bg-paper-warm rounded-lg transition-colors"
                           title={crm.is_active ? 'Deactivate' : 'Activate'}
                         >
                           {crm.is_active ? (
                             <ToggleRight className="w-5 h-5 text-green-400" />
                           ) : (
-                            <ToggleLeft className="w-5 h-5 text-slate-400" />
+                            <ToggleLeft className="w-5 h-5 text-ink-mute" />
                           )}
                         </button>
                       </TableCell>
@@ -251,14 +251,14 @@ export default function CRMPage() {
             <button
               type="button"
               onClick={() => setPassword(generatePassword(8))}
-              className="text-sm text-blue-400 hover:text-blue-300 mt-1"
+              className="text-sm text-ochre hover:text-ochre mt-1"
             >
               Generate new password
             </button>
           </div>
 
           {error && (
-            <div className="bg-red-900/30 border border-red-800 text-red-400 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-crimson/10 border border-crimson/30 text-crimson px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}

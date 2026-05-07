@@ -123,7 +123,7 @@ export default function CRMAssignmentsPage() {
     : indexes.map((i) => ({ value: i.id, label: `${i.name} (${i.course_count} courses)` }));
 
   if (loading) {
-    return <div className="p-6"><div className="h-64 bg-slate-800 rounded-xl skeleton" /></div>;
+    return <div className="p-6"><div className="h-64 bg-paper-dim rounded-xl skeleton" /></div>;
   }
 
   return (
@@ -157,7 +157,7 @@ export default function CRMAssignmentsPage() {
             </div>
 
             {message && (
-              <div className={`mb-4 px-4 py-3 rounded-lg text-sm ${message.includes('Assigned') || message.includes('Success') ? 'bg-green-900/30 border border-green-800 text-green-400' : 'bg-red-900/30 border border-red-800 text-red-400'}`}>
+              <div className={`mb-4 px-4 py-3 rounded-lg text-sm ${message.includes('Assigned') || message.includes('Success') ? 'bg-green-900/30 border border-green-800 text-green-400' : 'bg-crimson/10 border border-crimson/30 text-crimson'}`}>
                 {message}
               </div>
             )}
@@ -199,10 +199,10 @@ export default function CRMAssignmentsPage() {
                       <TableCell>
                         <div className="flex items-center gap-3">
                           <Avatar name={other.full_name} size="sm" />
-                          <span className="font-medium text-white">{other.full_name}</span>
+                          <span className="font-medium text-ink">{other.full_name}</span>
                         </div>
                       </TableCell>
-                      <TableCell className="text-slate-400">@{other.username}</TableCell>
+                      <TableCell className="text-ink-mute">@{other.username}</TableCell>
                       <TableCell><Badge variant="success">Active</Badge></TableCell>
                     </TableRow>
                   ))}

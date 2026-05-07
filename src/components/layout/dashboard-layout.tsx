@@ -20,7 +20,7 @@ export function DashboardLayout({
     <div className="flex h-screen overflow-hidden bg-paper">
       <Sidebar role={role} userName={userName} onLogout={onLogout} />
       <div className="flex flex-1 flex-col overflow-hidden relative z-10 ml-64">
-        <Header />
+        <Header userName={userName} role={role} />
         <main className="flex-1 overflow-y-auto bg-transparent p-8 lg:p-12">
           <div className="mx-auto max-w-[1280px]">
             {children}

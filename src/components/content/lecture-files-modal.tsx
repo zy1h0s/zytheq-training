@@ -106,21 +106,21 @@ export function LectureFilesModal({ isOpen, onClose, lecture, onUpdated }: Lectu
       size="lg"
     >
       {!lecture ? (
-        <p className="text-sm text-slate-400">Select a lecture to manage files.</p>
+        <p className="text-sm text-ink-mute">Select a lecture to manage files.</p>
       ) : (
         <div className="space-y-6">
           <div className="space-y-3">
-            <label className="text-sm font-medium text-slate-300">
+            <label className="text-sm font-medium text-ink-soft">
               Upload Files
             </label>
             <input
               type="file"
               multiple
               onChange={(e) => setSelectedFiles(Array.from(e.target.files || []))}
-              className="block w-full text-sm text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-slate-700 file:text-slate-200 hover:file:bg-slate-600"
+              className="block w-full text-sm text-ink-soft file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-paper-warm file:text-ink hover:file:bg-rule-soft"
             />
             {selectedFiles.length > 0 && (
-              <div className="text-xs text-slate-400">
+              <div className="text-xs text-ink-mute">
                 {selectedFiles.length} file{selectedFiles.length !== 1 && 's'} selected
               </div>
             )}
@@ -135,30 +135,30 @@ export function LectureFilesModal({ isOpen, onClose, lecture, onUpdated }: Lectu
           </div>
 
           <div>
-            <h3 className="text-sm font-medium text-slate-300 mb-3">Attached Files</h3>
+            <h3 className="text-sm font-medium text-ink-soft mb-3">Attached Files</h3>
             {lecture.files.length === 0 ? (
-              <p className="text-sm text-slate-500">No files attached yet.</p>
+              <p className="text-sm text-ink-faint">No files attached yet.</p>
             ) : (
               <div className="space-y-2">
                 {lecture.files.map((file) => (
                   <div
                     key={file.id}
-                    className="flex items-center gap-3 p-3 bg-slate-800/50 border border-slate-700 rounded-lg"
+                    className="flex items-center gap-3 p-3 bg-paper-dim/50 border border-rule rounded-lg"
                   >
-                    <FileText className="w-5 h-5 text-blue-400" />
+                    <FileText className="w-5 h-5 text-ochre" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm text-white truncate">{file.file_name}</p>
-                      <p className="text-xs text-slate-500">
+                      <p className="text-sm text-ink truncate">{file.file_name}</p>
+                      <p className="text-xs text-ink-faint">
                         {formatFileSize(file.file_size)}{file.file_type ? ` • ${file.file_type}` : ''}
                       </p>
                     </div>
                     <button
                       onClick={() => handleDelete(file.id)}
                       disabled={deletingId === file.id}
-                      className="p-2 hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-50"
+                      className="p-2 hover:bg-paper-warm rounded-lg transition-colors disabled:opacity-50"
                       title="Delete file"
                     >
-                      <Trash2 className="w-4 h-4 text-red-400" />
+                      <Trash2 className="w-4 h-4 text-crimson" />
                     </button>
                   </div>
                 ))}
@@ -167,7 +167,7 @@ export function LectureFilesModal({ isOpen, onClose, lecture, onUpdated }: Lectu
           </div>
 
           {error && (
-            <div className="bg-red-900/30 border border-red-800 text-red-400 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-crimson/10 border border-crimson/30 text-crimson px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}

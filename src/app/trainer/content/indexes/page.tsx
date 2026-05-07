@@ -165,7 +165,7 @@ export default function IndexesPage() {
             {loading ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} className="h-40 bg-slate-800 rounded-xl skeleton" />
+                  <div key={i} className="h-40 bg-paper-dim rounded-xl skeleton" />
                 ))}
               </div>
             ) : filteredIndexes.length === 0 ? (
@@ -180,16 +180,16 @@ export default function IndexesPage() {
                 {filteredIndexes.map((index) => (
                   <div
                     key={index.id}
-                    className="bg-slate-800/50 border border-slate-700 rounded-xl p-5 hover:border-slate-600 transition-colors"
+                    className="bg-paper-dim/50 border border-rule rounded-xl p-5 hover:border-rule transition-colors"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <div className="p-2 bg-blue-900/30 rounded-lg">
-                          <FolderOpen className="w-5 h-5 text-blue-400" />
+                          <FolderOpen className="w-5 h-5 text-ochre" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-white">{index.name}</h3>
-                          <p className="text-xs text-slate-500">{formatDate(index.created_at)}</p>
+                          <h3 className="font-semibold text-ink">{index.name}</h3>
+                          <p className="text-xs text-ink-faint">{formatDate(index.created_at)}</p>
                         </div>
                       </div>
                       <Badge variant={index.is_active ? 'success' : 'danger'} size="sm">
@@ -198,28 +198,28 @@ export default function IndexesPage() {
                     </div>
 
                     {index.description && (
-                      <p className="text-sm text-slate-400 mb-4 line-clamp-2">{index.description}</p>
+                      <p className="text-sm text-ink-mute mb-4 line-clamp-2">{index.description}</p>
                     )}
 
-                    <div className="flex items-center justify-between pt-3 border-t border-slate-700">
-                      <div className="flex items-center gap-1 text-sm text-slate-400">
+                    <div className="flex items-center justify-between pt-3 border-t border-rule">
+                      <div className="flex items-center gap-1 text-sm text-ink-mute">
                         <BookOpen className="w-4 h-4" />
                         <span>{index.course_count} courses</span>
                       </div>
                       <div className="flex gap-1">
                         <button
                           onClick={() => openEditModal(index)}
-                          className="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                          className="p-2 hover:bg-paper-warm rounded-lg transition-colors"
                           title="Edit"
                         >
-                          <Edit className="w-4 h-4 text-slate-400" />
+                          <Edit className="w-4 h-4 text-ink-mute" />
                         </button>
                         <button
                           onClick={() => handleDelete(index)}
-                          className="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                          className="p-2 hover:bg-paper-warm rounded-lg transition-colors"
                           title="Delete"
                         >
-                          <Trash2 className="w-4 h-4 text-red-400" />
+                          <Trash2 className="w-4 h-4 text-crimson" />
                         </button>
                       </div>
                     </div>
@@ -256,7 +256,7 @@ export default function IndexesPage() {
           />
 
           {error && (
-            <div className="bg-red-900/30 border border-red-800 text-red-400 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-crimson/10 border border-crimson/30 text-crimson px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}
