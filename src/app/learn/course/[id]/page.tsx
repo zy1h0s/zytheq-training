@@ -304,11 +304,12 @@ export default function CourseViewerPage() {
                 <Card>
                   <CardContent className="p-0">
                     {currentLecture.youtube_url ? (
-                      <div className="video-wrapper">
+                      <div className="relative w-full aspect-video bg-black">
                         <iframe
                           src={getYouTubeEmbedUrl(currentLecture.youtube_url) || ''}
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
+                          className="absolute inset-0 w-full h-full border-0"
                         />
                       </div>
                     ) : (
