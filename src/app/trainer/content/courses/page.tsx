@@ -20,6 +20,7 @@ import { Badge } from '@/components/ui/badge';
 import { Plus, BookOpen, Layers, PlayCircle, Edit, Trash2, Eye } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { normalizeThumbnailUrl } from '@/lib/utils';
 
 interface Index {
   id: string;
@@ -240,7 +241,7 @@ export default function CoursesPage() {
                     <div className="relative h-32 bg-gradient-to-br from-blue-900/50 to-slate-800 flex items-center justify-center">
                       {course.thumbnail_url ? (
                         <Image
-                          src={course.thumbnail_url}
+                          src={normalizeThumbnailUrl(course.thumbnail_url) || ''}
                           alt={course.title}
                           fill
                           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"

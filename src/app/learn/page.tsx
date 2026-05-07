@@ -21,7 +21,7 @@ import {
   Flame,
   CheckCircle,
 } from 'lucide-react';
-import { formatDuration } from '@/lib/utils';
+import { formatDuration, normalizeThumbnailUrl } from '@/lib/utils';
 import Image from 'next/image';
 
 interface CourseWithProgress {
@@ -154,7 +154,7 @@ export default function LearnDashboardPage() {
                         <div className="relative h-32 bg-gradient-to-br from-blue-900/50 to-slate-800 flex items-center justify-center">
                           {course.thumbnail_url ? (
                             <Image
-                              src={course.thumbnail_url}
+                              src={normalizeThumbnailUrl(course.thumbnail_url) || ''}
                               alt={course.title}
                               fill
                               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
